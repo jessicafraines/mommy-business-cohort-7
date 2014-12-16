@@ -1,0 +1,11 @@
+<form name="registerForm" ng-submit="acct.register()" novalidate>
+  <div class="form-group" ng-class="{'has-error': registerForm.$dirty && !acct.email}">
+    <label>email address</label>
+    <input class="form-control" type="email" ng-model="acct.email" required>
+  </div>
+  <div class="form-group" ng-class="{'has-error': registerForm.$dirty && !acct.password}">
+    <label>email address</label>
+    <input class="form-control" type="password" ng-model="acct.password" required>
+  </div>
+  <div class="btn btn-default" ng-class="{disabled: registerForm.$invalid}" ng-click="acct.register()">register</div>
+</form>
