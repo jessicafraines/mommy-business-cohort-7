@@ -1,0 +1,29 @@
+<form name="addGrowthForm" ng-submit="addGrowthForm.$valid && child.addGrowth()" novalidate>
+  <div class="form-group" ng-class="{'has-error': !child.growth.date}">
+    <label class="control-label">date</label>
+    <input class="form-control" type="date" ng-model="child.newGrowth.date" required>
+  </div>
+  <label class="control-label">height</label>
+    <div class="form-group" ng-class="{'has-error': !child.growth.feet}">
+      <label class="control-label">feet</label>
+      <input class="form-control" type="number" ng-model="child.newGrowth.feet">
+    </div>
+    <div class="form-group" ng-class="{'has-error': !child.growth.inches}">
+      <label class="control-label">inches</label>
+      <input class="form-control" type="time" ng-model="child.newGrowth.inches">
+    </div>
+  <label class="control-label">weight</label>
+    <div class="form-group" ng-class="{'has-error': !child.growth.pounds}">
+      <label class="control-label">lbs</label>
+      <input class="form-control" type="number" ng-model="child.newGrowth.pounds">
+    </div>
+    <div class="form-group" ng-class="{'has-error': !child.growth.ounces}">
+      <label class="control-label">oz</label>
+      <input class="form-control" type="number" ng-model="child.newGrowth.ounces">
+    </div>
+  <div class="form-group" ng-class="{'has-error': !child.growth.head}">
+    <label class="control-label">head circumference</label>
+    <input class="form-control" type="number" ng-model="child.newGrowth.head">
+  </div>
+  <input type="submit" value="add growth" ng-disabled="addGrowthForm.$invalid">
+</form>
