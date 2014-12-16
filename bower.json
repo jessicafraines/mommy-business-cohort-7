@@ -1,0 +1,18 @@
+{
+  "name": "mommy-business-cohort-7",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jessicafraines/mommy-business-cohort-7",
+  "authors": [
+    "jessicafraines <jessicafraines@gmail.com>"
+  ],
+  "description": "An app to track important information about your child(ren)",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
