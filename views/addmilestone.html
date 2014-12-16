@@ -1,11 +1,11 @@
-<form name="addMilestoneForm" ng-submit="addMilestoneForm.$valid && child.addmilestone()" novalidate>
+<form name="addMilestoneForm" ng-submit="addMilestoneForm.$valid && child.addMilestone()" novalidate>
   <div class="form-group" ng-class="{'has-error': !child.milestone.date}">
     <label class="control-label">date</label>
-    <input class="form-control" type="date" ng-model="child.newmilestone.date" required>
+    <input class="form-control" type="date" ng-model="child.newMilestone.date" required>
   </div>
   <div class="form-group" ng-class="{'has-error': !child.milestone.milestone}">
     <label class="control-label">milestone</label>
-    <input class="form-control" type="number" ng-model="child.newmilestone.milestone">
+    <input class="form-control" type="number" ng-model="child.newMilestone.milestone">
   </div>
-  <input type="submit" value="add milestone" ng-disabled="addmilestoneForm.$invalid">
+  <input type="submit" value="add milestone" ng-disabled="addMilestoneForm.$invalid">
 </form>
