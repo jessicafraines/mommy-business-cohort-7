@@ -1,0 +1,41 @@
+<h1>{{child.name}}</h1>
+
+<h4>Growth Chart</h4>
+<table class="table table-bordered">
+  <thead>
+    <th>date</th>
+    <th>height</th>
+    <th>weight</th>
+    <th>head circumference</th>
+  </thead>
+  <tr>
+    <td>{{child.growth.date}}</td>
+    <td>{{child.growth.height}}</td>
+    <td>{{child.growth.weight}}</td>
+    <td>{{child.growth.head}}</td>
+  </tr>
+</table>
+<h4>Milestone Chart</h4>
+<table class="table table-bordered">
+  <thead>
+    <th>date</th>
+    <th>milestone</th>
+  </thead>
+  <tr>
+    <td>{{child.milestone.date}}</td>
+    <td>{{child.milestone.milestone}}</td>
+  </tr>
+</table>
+<h4>Dr Appointments</h4>
+<table class="table table-bordered">
+  <thead>
+    <th>date</th>
+    <th>time</th>
+    <th>doctor</th>
+  </thead>
+  <tr>
+    <td>{{child.appointment.date}}</td>
+    <td>{{child.appointment.time}}</td>
+    <td>{{child.appointment.doctor}}</td>
+  </tr>
+</table>
