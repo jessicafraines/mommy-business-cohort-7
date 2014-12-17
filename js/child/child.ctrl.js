@@ -4,10 +4,10 @@
   angular.module('mommyApp')
     .controller('ChildController', function($routeParams, childFactory){
       var vm = this,
-          id = $routeParams.id;
+          id = $routeParams.childId;
 
-      childFactory.getChild(id, function(data){
-        vm.child = data;
+      childFactory.getChildren(function(data){
+        vm.children = data;
       });
       vm.addChild = function(){
         childFactory.createChild(vm.newChild, function(data){
