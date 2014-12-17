@@ -1,15 +1,6 @@
 ;(function(){
   'use strict';
   angular.module('mommyApp')
-  .controller('RegisterController', function(accountFactory){
-    var vm = this;
-
-    vm.register = function(){
-      accountFactory.register(vm.email, vm.password, function(){
-        vm.login();
-      });
-    }; //close register
-  }) //close register cntrl
 
   .controller('LoginController', function($scope, $location, accountFactory){
     var vm = this;
@@ -18,10 +9,15 @@
         $location.path('/children');
         $scope.$apply();
       });
-    }; //close login
+    }; 
     vm.forgotPassword = function(){
       accountFactory.resetPassword(vm.email);
     };
+    vm.register = function(){
+      accountFactory.register(vm.email, vm.password, function(){
+        vm.login();
+      });
+    }; 
   }) //close login cntrl   
   
   .controller('LogoutController', function($scope, $location, accountFactory){
