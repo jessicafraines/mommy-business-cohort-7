@@ -1,11 +1,11 @@
-<form name="registerForm" ng-submit="register.register()" novalidate>
-  <div class="form-group" ng-class="{'has-error': registerForm.$dirty && !register.email}">
+<form name="registerForm" ng-submit="login.register()" novalidate>
+  <div class="form-group" ng-class="{'has-error': registerForm.$dirty && !login.email}">
     <label>email address</label>
-    <input class="form-control" type="email" ng-model="register.email" required>
+    <input class="form-control" type="email" ng-model="login.email" required>
   </div>
-  <div class="form-group" ng-class="{'has-error': registerForm.$dirty && !register.password}">
+  <div class="form-group" ng-class="{'has-error': registerForm.$dirty && !login.password}">
     <label>email address</label>
-    <input class="form-control" type="password" ng-model="register.password" required>
+    <input class="form-control" type="password" ng-model="login.password" required>
   </div>
-  <div class="btn btn-default" ng-class="{disabled: registerForm.$invalid}" ng-click="register.register()">register</div>
+  <div class="btn btn-default" ng-class="{disabled: registerForm.$invalid}" ng-click="login.register()">register</div>
 </form>
