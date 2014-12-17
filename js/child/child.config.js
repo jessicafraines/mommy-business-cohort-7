@@ -9,19 +9,37 @@
       controllerAs: 'child',
       private: true
     })
-    .when('/newMilestone', {
+    .when('/:childId/milestones', {
+      templateUrl: 'views/milestones.html',
+      controller: 'ChildController',
+      controllerAs: 'child',
+      private: true
+    })
+    .when('/:childId/milestones/new', {
       templateUrl: 'views/addmilestone.html',
       controller: 'ChildController',
       controllerAs: 'child',
       private: true
     })
-    .when('/newGrowth', {
+    .when('/:childId/growths', {
+      templateUrl: 'views/growths.html',
+      controller: 'ChildController',
+      controllerAs: 'child',
+      private: true
+    })
+    .when('/:childId/growths/new', {
       templateUrl: 'views/addgrowth.html',
       controller: 'ChildController',
       controllerAs: 'child',
       private: true
     })
-    .when('/newAppointment', {
+    .when('/:childId/appointments', {
+      templateUrl: 'views/appts.html',
+      controller: 'ChildController',
+      controllerAs: 'child',
+      private: true
+    })
+    .when('/:childId/appointments/new', {
       templateUrl: 'views/addappt.html',
       controller: 'ChildController',
       controllerAs: 'child',
