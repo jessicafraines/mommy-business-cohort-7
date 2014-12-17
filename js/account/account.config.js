@@ -19,7 +19,7 @@
       controllerAs: 'login'
     })
     .when('/changePassword', {
-      templateUrl: 'views/change.password.html',
+      templateUrl: 'views/changepassword.html',
       controller: 'ChangePasswordController',
       controllerAs: 'changepw',
       private: true

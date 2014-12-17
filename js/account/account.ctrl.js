@@ -30,7 +30,7 @@
   .controller('ChangePasswordController', function($scope, $location, accountFactory){
     var vm = this;
     vm.changePassword = function(){
-      accountFactory.changePassword(vm.oldPass, vm.newPass, function(){
+      accountFactory.changePassword(vm.oldPassword, vm.newPassword, function(){
         $location.path('/logout');
         $scope.$apply();
       })

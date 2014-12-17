@@ -74,7 +74,7 @@
       );
     };
     
-    function _hasTempPassowrd(){
+    function _hasTempPassword(){
       return ref.getAuth().password.isTemporaryPassword;
     }
 
