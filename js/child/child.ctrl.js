@@ -15,14 +15,22 @@
           vm.children[data.name] = vm.newChild;
         });
       };
+      vm.addAppt = function(){
+        childFactory.createAppt(id, vm.newAppt, function(data){
+          vm.appts = vm.appts || {};
+          vm.appts[data.date] = vm.newAppt;
+        });
+      };
+      vm.getAppts = function(){
+        childFactory.getAppts(function(data){
+          vm.appts = data;
+        });
+      };
     }) //closes child controller
 
-    .controller('ChildrenController', function(childFactory){
+   /* .controller('ChildrenController', function(childFactory){
       var vm = this;
 
-      childFactory.getChildren(function(data){
-        vm.children = data;
-      });
 
-    }) //closes children controller
+    }) //closes children controller*/
 }());
