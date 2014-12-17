@@ -4,7 +4,7 @@
   .config(function($routeProvider){
     $routeProvider
     .when('/login', {
-      templateUrl: 'views/login.html'
+      templateUrl: 'views/login.html',
       controller: 'LoginController',
       controllerAs: 'login',
       resolve: {
@@ -14,18 +14,18 @@
       }
     })
     .when('/register', {
-      templateUrl: 'views/register.html'
+      templateUrl: 'views/register.html',
       controller: 'RegisterController',
       controllerAs: 'register'
     })
     .when('/changePassword', {
-      templateUrl: 'views/change.password.html'
+      templateUrl: 'views/change.password.html',
       controller: 'ChangePasswordController',
       controllerAs: 'changepw',
       private: true
     })
     .when('/logout', {
-      template: ''
+      template: '',
       controller: 'LogoutController'
     })
     .otherwise({redirectTo: '/'});
