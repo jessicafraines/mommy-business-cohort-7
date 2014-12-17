@@ -9,8 +9,20 @@
       controllerAs: 'child',
       private: true
     })
+    .when('/children', {
+      templateUrl: 'views/children.html',
+      controller: 'ChildrenController',
+      controllerAs: 'children',
+      private: true
+    })
+    .when('/child', {
+      templateUrl: 'views/child.html',
+      controller: 'ChildController',
+      controllerAs: 'child',
+      private: true
+    })
     .when('/:childId/milestones', {
-      templateUrl: 'views/milestones.html',
+      templateUrl: 'views/child.html',
       controller: 'ChildController',
       controllerAs: 'child',
       private: true
@@ -22,7 +34,7 @@
       private: true
     })
     .when('/:childId/growths', {
-      templateUrl: 'views/growths.html',
+      templateUrl: 'views/child.html',
       controller: 'ChildController',
       controllerAs: 'child',
       private: true
@@ -34,7 +46,7 @@
       private: true
     })
     .when('/:childId/appointments', {
-      templateUrl: 'views/appts.html',
+      templateUrl: 'views/child.html',
       controller: 'ChildController',
       controllerAs: 'child',
       private: true
