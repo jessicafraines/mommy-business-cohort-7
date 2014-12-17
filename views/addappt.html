@@ -1,15 +1,15 @@
-<form name="addAppointmentForm" ng-submit="addAppointmentForm.$valid && child.addappointment()" novalidate>
-  <div class="form-group" ng-class="{'has-error': !child.appointment.date}">
+<form name="addApptForm" ng-submit="addApptForm.$valid && child.addAppt()" novalidate>
+  <div class="form-group" ng-class="{'has-error': !child.appt.date}">
     <label class="control-label">date</label>
-    <input class="form-control" type="date" ng-model="child.newAppointment.date" required>
+    <input class="form-control" type="date" ng-model="child.newAppt.date" required>
   </div>
   <div class="form-group">
     <label class="control-label">time</label>
-    <input class="form-control" type="time" ng-model="child.newAppointment.time">
+    <input class="form-control" type="time" ng-model="child.newAppt.time">
   </div>
   <div class="form-group">
     <label class="control-label">doctor</label>
-    <input class="form-control" type="time" ng-model="child.newAppointment.doctor">
+    <input class="form-control" type="text" ng-model="child.newAppt.doctor">
   </div>
-  <input type="submit" value="add appointment" ng-disabled="addAppointmentForm.$invalid">
+  <input type="submit" value="add appointment" ng-disabled="addApptForm.$invalid">
 </form>
