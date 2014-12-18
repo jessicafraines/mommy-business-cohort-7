@@ -5,6 +5,7 @@
     .controller('ChildController', function($routeParams, childFactory){
       var vm = this,
           id = $routeParams.childId;
+    vm.childId = id;
 
       childFactory.getChildren(function(data){
         vm.children = data;
