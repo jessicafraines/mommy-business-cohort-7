@@ -17,43 +17,49 @@
     })
     .when('/children/:childId', {
       templateUrl: 'views/child.html',
-      controller: 'ChildController',
-      controllerAs: 'child',
+      controller: 'ShowController',
+      controllerAs: 'show',
       private: true
     })
     .when('/children/:childId/milestones', {
       templateUrl: 'views/child.html',
-      controller: 'ChildController',
-      controllerAs: 'child',
+      controller: 'ShowController',
+      controllerAs: 'show',
       private: true
     })
     .when('/children/:childId/milestones/new', {
       templateUrl: 'views/addmilestone.html',
-      controller: 'ChildController',
-      controllerAs: 'child',
+      controller: 'ShowController',
+      controllerAs: 'show',
       private: true
     })
     .when('/children/children/:childId/growths', {
       templateUrl: 'views/child.html',
-      controller: 'ChildController',
-      controllerAs: 'child',
+      controller: 'ShowController',
+      controllerAs: 'show',
       private: true
     })
     .when('/children/:childId/growths/new', {
       templateUrl: 'views/addgrowth.html',
-      controller: 'ChildController',
-      controllerAs: 'child',
+      controller: 'ShowController',
+      controllerAs: 'show',
       private: true
     })
     .when('/children/:childId/appointments', {
       templateUrl: 'views/child.html',
-      controller: 'ChildController',
-      controllerAs: 'child',
+      controller: 'ShowController',
+      controllerAs: 'show',
       private: true
     })
     .when('/children/:childId/appointments/new', {
       templateUrl: 'views/addappt.html',
-      controller: 'ChildController',
+      controller: 'ShowController',
+      controllerAs: 'show',
+      private: true
+    })
+    .when('/children/:childId/appointments/:apptId/edit', {
+      templateUrl: 'views/addappt.html',
+      controller: 'EditController',
       controllerAs: 'child',
       private: true
     })
