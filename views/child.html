@@ -1,4 +1,4 @@
-<h1>{{child.name}}</h1>
+<h1>{{show.child.name}}</h1>
 
 <h4>Growth Chart</h4>
 <table class="table table-bordered">
@@ -33,9 +33,17 @@
     <th>time</th>
     <th>doctor</th>
   </thead>
-  <tr>
-    <td>{{child.appointment.date}}</td>
-    <td>{{child.appointment.time}}</td>
-    <td>{{child.appointment.doctor}}</td>
+  <tr ng-repeat="(apptId, appt) in show.appts">
+    <td>{{appt.date | date:"EEE, MMM dd, yyyy"}}</td>
+    <td>{{appt.time | date: "hh:mm a"}}</td>
+    <td>{{appt.doctor}}</td>
+    <td>
+      <a class="btn btn-primary" href="/#/children/{{show.childId}}/appointments/{{apptId}}/edit">edit</a>
+      <button ng-click="child.deleteAppt(apptId)">x</button>
+    </td>
   </tr>
 </table>
+<div>
+  <a class="btn btn-primary" href="/#/children/{{show.childId}}/appointments/new">add appointment</a>
+</div>
+

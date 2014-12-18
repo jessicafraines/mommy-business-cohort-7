@@ -1,4 +1,8 @@
-<div ng-repeat="kid in child.children">
+<div ng-repeat="(childId, kid) in child.children">
   <h4>{{kid.name}}</h4>
-  <h4>{{kid.dob}}</h4>
+  <h4>{{kid.dob | date:"MM-dd-yyyy"}}</h4>
+  <a class="btn btn-primary" href="/#/children/{{childId}}">Look at {{kid.name}}</a>
+</div>
+<div>
+  <a class="btn btn-primary" href="/#/new">add a child</a>
 </div>
