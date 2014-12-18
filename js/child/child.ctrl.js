@@ -21,11 +21,9 @@
           vm.appts[data.date] = vm.newAppt;
         });
       };
-      vm.getAppts = function(){
-        childFactory.getAppts(function(data){
-          vm.appts = data;
-        });
-      };
+      childFactory.getAppts(id, function(data){
+        vm.appts = data;
+      });
     }) //closes child controller
 
    /* .controller('ChildrenController', function(childFactory){
