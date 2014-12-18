@@ -8,11 +8,15 @@
     <th>weight</th>
     <th>head circumference</th>
   </thead>
-  <tr>
+  <tr ng-repeat="(growthId, growth) in child.growth">
     <td>{{child.growth.date}}</td>
     <td>{{child.growth.height}}</td>
     <td>{{child.growth.weight}}</td>
     <td>{{child.growth.head}}</td>
+    <td class="link">
+      <a class="btn btn-primary" href="/#/{{growthId}}">edit</a>
+      <button ng-click="child.deleteGrowth(growthId)">x</button>
+    </td>
   </tr>
 </table>
 <h4>Milestone Chart</h4>
@@ -21,9 +25,13 @@
     <th>date</th>
     <th>milestone</th>
   </thead>
-  <tr>
+  <tr ng-repeat="(milestoneId, milestone) in child.milestones">
     <td>{{child.milestone.date}}</td>
     <td>{{child.milestone.milestone}}</td>
+    <td class="link">
+      <a class="btn btn-primary" href="/#/{{milestoneId}}">edit</a>
+      <button ng-click="child.deleteMilestone(milestoneId)">x</button>
+    </td>
   </tr>
 </table>
 <h4>Dr Appointments</h4>
