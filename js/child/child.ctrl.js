@@ -31,7 +31,7 @@
         childFactory.editItem(id, apptId, vm.newAppt);
       };
     }) //closes edit controller
-    .controller('ShowController', function($routeParams, $location, childFactory){
+    .controller('ShowController', function($routeParams, $location, $scope, childFactory){
       var vm = this,
           id = $routeParams.childId;
     vm.childId = id;
@@ -43,7 +43,8 @@
         childFactory.createAppt(id, vm.newAppt, function(data){
           vm.appts = vm.appts || {};
           vm.appts[data.date] = vm.newAppt;
-          $location.path('/children/:id');
+          $location.path('/children/' + id);
+          //$scope.$apply();
         });
       };
       childFactory.getAppts(id, function(data){

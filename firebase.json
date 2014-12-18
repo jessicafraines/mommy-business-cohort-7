@@ -1,0 +1,9 @@
+{
+  "firebase": "mommy-business",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
