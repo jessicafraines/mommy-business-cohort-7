@@ -1,4 +1,4 @@
 ;(function(){
   'use strict'
-  angular.module('mommyApp', ['ngRoute']);
+  angular.module('mommyApp', ['ngRoute', 'mgcrea.ngStrap']);
 }());
