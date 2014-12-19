@@ -33,6 +33,12 @@
       controllerAs: 'show',
       private: true
     })
+    .when('/children/:childId/milestones/:milestoneId/edit', {
+      templateUrl: 'views/addmilestone.html',
+      controller: 'EditController',
+      controllerAs: 'show',
+      private: true
+    })
     .when('/children/children/:childId/growths', {
       templateUrl: 'views/child.html',
       controller: 'ShowController',
@@ -42,6 +48,12 @@
     .when('/children/:childId/growths/new', {
       templateUrl: 'views/addgrowth.html',
       controller: 'ShowController',
+      controllerAs: 'show',
+      private: true
+    })
+    .when('/children/:childId/growths/:growthId/edit', {
+      templateUrl: 'views/addgrowth.html',
+      controller: 'EditController',
       controllerAs: 'show',
       private: true
     })
@@ -60,7 +72,7 @@
     .when('/children/:childId/appointments/:apptId/edit', {
       templateUrl: 'views/addappt.html',
       controller: 'EditController',
-      controllerAs: 'child',
+      controllerAs: 'show',
       private: true
     })
     .otherwise({redirectTo: '/'});
