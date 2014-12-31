@@ -215,5 +215,5 @@
       getGrowth: getGrowth,
       deleteGrowth: deleteGrowth
     }
-  }) //closes factory
+  }) //closes child factory
 }());

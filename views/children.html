@@ -1,4 +1,5 @@
-<div ng-repeat="(childId, kid) in child.children">
+<div class="child" ng-repeat="(childId, kid) in child.children">
+  <img src="/img/baby.jpg">
   <h4>{{kid.name}}</h4>
   <h4>{{kid.dob | date:"MM-dd-yyyy"}}</h4>
   <a class="btn btn-primary" href="/#/children/{{childId}}">Look at {{kid.name}}</a>
