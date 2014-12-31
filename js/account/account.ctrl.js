@@ -22,7 +22,7 @@
   
   .controller('LogoutController', function($scope, $location, accountFactory){
     accountFactory.logout(function(){
-      $location.path('/login');
+      $location.path('/');
       $scope.$apply();
     });
   }) //close logout cntrl
