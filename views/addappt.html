@@ -1,15 +1,30 @@
-<form name="addApptForm" ng-submit="addApptForm.$valid && show.addAppt()" novalidate>
-  <div class="form-group" ng-class="{'has-error': !show.appt.date}">
-    <label class="control-label">date</label>
-    <input class="form-control" type="text" ng-model="show.newAppt.date" required bs-datepicker>
+<div class="row">
+  <div class="col-xs-4"></div>
+  <div class="col-xs-4">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" data-dismiss="modal" class="close">x</button>
+        <h4 class="modal-title">Add an Appointment</h4>
+      </div>
+      <div class="modal-body">
+        <form name="addApptForm" ng-submit="addApptForm.$valid && show.addAppt()" novalidate>
+          <div class="form-group" ng-class="{'has-error': !show.appt.date}">
+            <label class="control-label">date</label>
+            <input class="form-control" type="text" ng-model="show.newAppt.date" required bs-datepicker>
+          </div>
+          <div class="form-group">
+            <label class="control-label">time</label>
+            <input class="form-control" type="text" ng-model="show.newAppt.time" bs-timepicker>
+          </div>
+          <div class="form-group">
+            <label class="control-label">doctor</label>
+            <input class="form-control" type="text" ng-model="show.newAppt.doctor">
+          </div>
+          <div class="modal-footer">
+            <input type="submit" value="submit" ng-disabled="addApptForm.$invalid" data-dismiss="modal">
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-    <label class="control-label">time</label>
-    <input class="form-control" type="text" ng-model="show.newAppt.time" bs-timepicker>
-  </div>
-  <div class="form-group">
-    <label class="control-label">doctor</label>
-    <input class="form-control" type="text" ng-model="show.newAppt.doctor">
-  </div>
-  <input type="submit" value="add appointment" ng-disabled="addApptForm.$invalid">
-</form>
+</div>
