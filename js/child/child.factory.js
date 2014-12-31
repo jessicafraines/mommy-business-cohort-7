@@ -156,7 +156,6 @@
       });
     }
     function deleteAppt(childId, apptId, cb){
-      console.log('factory');
       $http.delete(_apptsUrl(childId, apptId))
       .success(function(){
         cb();

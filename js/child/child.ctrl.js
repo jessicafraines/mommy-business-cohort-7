@@ -31,6 +31,7 @@
       vm.addMilestone = function(){
         childFactory.editMilestone(id, milestoneId, vm.newMilestone);
         $location.path('/children/' + id);
+        $scope.$apply();
       };
       childFactory.getGrowth(id, growthId, function(data){
         vm.newGrowth = data;
@@ -38,6 +39,7 @@
       vm.addGrowth = function(){
         childFactory.editGrowth(id, growthId, vm.newGrowth);
         $location.path('/children/' + id);
+        $scope.$apply();
       };
       childFactory.getAppt(id, apptId, function(data){
         vm.newAppt = data;
@@ -45,9 +47,10 @@
       vm.addAppt = function(){
         childFactory.editAppt(id, apptId, vm.newAppt);
         $location.path('/children/' + id);
+       // $scope.$apply();
       };
     }) //closes edit controller
-    .controller('ShowController', function($routeParams, $location,  childFactory){
+    .controller('ShowController', function($routeParams, $scope, $location,  childFactory){
       var vm = this,
           id = $routeParams.childId;
     vm.childId = id;
@@ -60,10 +63,10 @@
           vm.milestones = vm.milestones || {};
           vm.milestones[data.date] = vm.newMilestone;
           $location.path('/children/' + id);
+          $scope.$apply();
         });
       };
       childFactory.getMilestones(id, function(data){
-        console.log('Controller');
         vm.milestones = data;
       });
 
@@ -77,6 +80,7 @@
           vm.growths = vm.growths || {};
           vm.growths[data.date] = vm.newGrowth;
           $location.path('/children/' + id);
+          $scope.$apply();
         });
       };
       childFactory.getGrowths(id, function(data){
@@ -93,6 +97,7 @@
           vm.appts = vm.appts || {};
           vm.appts[data.date] = vm.newAppt;
           $location.path('/children/' + id);
+          //$scope.$apply();
         });
       };
       childFactory.getAppts(id, function(data){
