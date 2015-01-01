@@ -1,7 +1,16 @@
+@import url(http://fonts.googleapis.com/css?family=Give+You+Glory|Dancing+Script|Satisfy|Kranky|Mountains+of+Christmas|Miltonian+Tattoo);
+
 .navbar-header img {
   width: 50px;
   height: 50px;
   border-radius: 100px;
+}
+.navbar > .container .navbar-brand{
+  font-size: 35px;
+  font-family: 'Miltonian Tatoo', cursive;
+}
+.navbar-default .navbar-nav > li > a {
+  font-family: 'Miltonian Tatoo', cursive;
 }
 .body {
   background-image: url('/img/feet.jpg');
@@ -38,7 +47,10 @@ div.child img{
   background-color: #f6f6f6;
 }
 .modal-header{
-  background-color: black;
+  background-color: grey;
   color: #f6f6f6;
   text-align: center;
+}
+.modal-header .close{
+  color: #f6f6f6;
 }
