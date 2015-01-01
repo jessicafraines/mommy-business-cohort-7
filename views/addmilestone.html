@@ -1,11 +1,28 @@
-<form name="addMilestoneForm" ng-submit="addMilestoneForm.$valid && show.addMilestone()" novalidate>
-  <div class="form-group" ng-class="{'has-error': !show.milestone.date}">
-    <label class="control-label">date</label>
-    <input class="form-control" type="text" ng-model="show.newMilestone.date" required bs-datepicker>
+<div class="modal-fade" aria-hidden="true">i
+  <div class="row">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-8">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="close"><span class="close" aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Milestones</h4>
+        </div>
+        <div class="modal-body">
+          <form name="addMilestoneForm" ng-submit="addMilestoneForm.$valid && show.addMilestone()" novalidate>
+            <div class="form-group" ng-class="{'has-error': !show.milestone.date}">
+              <label class="control-label">date</label>
+              <input class="form-control" type="text" ng-model="show.newMilestone.date" required bs-datepicker>
+            </div>
+            <div class="form-group" ng-class="{'has-error': !show.milestone.milestone}">
+              <label class="control-label">milestone</label>
+              <input class="form-control" type="text" ng-model="show.newMilestone.milestone">
+            </div>
+            <div class="modal-footer">
+              <input type="submit" value="save changes" ng-disabled="addMilestoneForm.$invalid" data-dismiss="modal">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="form-group" ng-class="{'has-error': !show.milestone.milestone}">
-    <label class="control-label">milestone</label>
-    <input class="form-control" type="text" ng-model="show.newMilestone.milestone">
-  </div>
-  <input type="submit" value="add milestone" ng-disabled="addMilestoneForm.$invalid">
-</form>
+</div>

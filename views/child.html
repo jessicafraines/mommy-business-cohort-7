@@ -1,21 +1,26 @@
 <h1>{{show.child.name}}</h1>
+<!--<div ng-repeat="(photoId, photo) in show.photos">
+  <div><img class="child-img" ng-src="https://s3.amazonaws.com/mommy-business-jessicafraines-com-images/{{show.childId}}/[[photoId}}.jpg"></div>-->
 
 <h4>Growth Chart</h4>
 <table class="table table-bordered">
   <thead>
+    <th></th>
     <th>date</th>
     <th>height</th>
     <th>weight</th>
     <th>head circumference</th>
   </thead>
   <tr ng-repeat="(growthId, growth) in show.growths">
+    <td>
+      <button ng-click="show.deleteGrowth(growthId)">x</button>
+    </td>
     <td>{{growth.date | date:"EEE, MMM dd, yyyy"}}</td>
     <td>{{growth.feet}}' {{growth.inches}}"</td>
     <td>{{growth.pounds}}lbs {{growth.ounces}}oz</td>
     <td>{{growth.head}}</td>
     <td class="link">
       <a class="btn btn-primary" href="/#/children/{{show.childId}}/growths/{{growthId}}/edit">edit</a>
-      <button ng-click="show.deleteGrowth(growthId)">x</button>
     </td>
   </tr>
 </table>

@@ -1,29 +1,46 @@
-<form name="addGrowthForm" ng-submit="addGrowthForm.$valid && show.addGrowth()" novalidate>
-  <div class="form-group" ng-class="{'has-error': !show.growth.date}">
-    <label class="control-label">date</label>
-    <input class="form-control" type="text" ng-model="show.newGrowth.date" required bs-datepicker>
+<div class="modal-fade">
+  <div class="row">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-8">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="close"><span class="close" aria-hidden="true">&times;</span></button>
+          <hr class="modal-title">Growth Chart</h4>
+      </div>
+      <div class="modal-body">
+        <form name="addGrowthForm" ng-submit="addGrowthForm.$valid && show.addGrowth()" novalidate>
+          <div class="form-group" ng-class="{'has-error': !show.growth.date}">
+            <label class="control-label">date</label>
+            <input class="form-control" type="text" ng-model="show.newGrowth.date" required bs-datepicker>
+          </div>
+          <label class="control-label">height</label>
+            <div class="form-group" ng-class="{'has-error': !show.growth.feet}">
+              <label class="control-label">feet</label>
+              <input class="form-control" type="number" ng-model="show.newGrowth.feet">
+            </div>
+            <div class="form-group" ng-class="{'has-error': !show.growth.inches}">
+              <label class="control-label">inches</label>
+              <input class="form-control" type="number" ng-model="show.newGrowth.inches">
+            </div>
+          <label class="control-label">weight</label>
+            <div class="form-group" ng-class="{'has-error': !show.growth.pounds}">
+              <label class="control-label">lbs</label>
+              <input class="form-control" type="number" ng-model="show.newGrowth.pounds">
+            </div>
+            <div class="form-group" ng-class="{'has-error': !show.growth.ounces}">
+              <label class="control-label">oz</label>
+              <input class="form-control" type="number" ng-model="show.newGrowth.ounces">
+            </div>
+          <div class="form-group" ng-class="{'has-error': !show.growth.head}">
+            <label class="control-label">head circumference</label>
+            <input class="form-control" type="number" ng-model="show.newGrowth.head">
+          </div>
+          <div class="modal-footer">
+              <input type="submit" value="add growth" ng-disabled="addGrowthForm.$invalid">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-  <label class="control-label">height</label>
-    <div class="form-group" ng-class="{'has-error': !show.growth.feet}">
-      <label class="control-label">feet</label>
-      <input class="form-control" type="number" ng-model="show.newGrowth.feet">
-    </div>
-    <div class="form-group" ng-class="{'has-error': !show.growth.inches}">
-      <label class="control-label">inches</label>
-      <input class="form-control" type="number" ng-model="show.newGrowth.inches">
-    </div>
-  <label class="control-label">weight</label>
-    <div class="form-group" ng-class="{'has-error': !show.growth.pounds}">
-      <label class="control-label">lbs</label>
-      <input class="form-control" type="number" ng-model="show.newGrowth.pounds">
-    </div>
-    <div class="form-group" ng-class="{'has-error': !show.growth.ounces}">
-      <label class="control-label">oz</label>
-      <input class="form-control" type="number" ng-model="show.newGrowth.ounces">
-    </div>
-  <div class="form-group" ng-class="{'has-error': !show.growth.head}">
-    <label class="control-label">head circumference</label>
-    <input class="form-control" type="number" ng-model="show.newGrowth.head">
-  </div>
-  <input type="submit" value="add growth" ng-disabled="addGrowthForm.$invalid">
-</form>
+</div>
