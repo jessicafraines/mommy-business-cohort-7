@@ -18,7 +18,7 @@
       };
     }) //closes child controller
 
-    .controller('EditController', function($location, $routeParams, childFactory){
+    .controller('EditController', function($location, $scope, $routeParams, childFactory){
       var vm      = this,
           id      = $routeParams.childId,
       apptId      = $routeParams.apptId,
@@ -29,31 +29,46 @@
         vm.newMilestone = data;
       });
       vm.addMilestone = function(){
-        childFactory.editMilestone(id, milestoneId, vm.newMilestone);
-        $location.path('/children/' + id);
-        $scope.$apply();
+        childFactory.editMilestone(id, milestoneId, vm.newMilestone)
+        .success(function(data){
+          $location.path('/children/' + id);
+        });
       };
       childFactory.getGrowth(id, growthId, function(data){
         vm.newGrowth = data;
       });
       vm.addGrowth = function(){
-        childFactory.editGrowth(id, growthId, vm.newGrowth);
-        $location.path('/children/' + id);
-        $scope.$apply();
+        childFactory.editGrowth(id, growthId, vm.newGrowth)
+          .success(function(data){
+            $location.path('/children/' + id);
+          });
       };
       childFactory.getAppt(id, apptId, function(data){
         vm.newAppt = data;
       });
       vm.addAppt = function(){
-        childFactory.editAppt(id, apptId, vm.newAppt);
-        $location.path('/children/' + id);
-       // $scope.$apply();
+        childFactory.editAppt(id, apptId, vm.newAppt)
+          .success(function(data){
+            $location.path('/children/' + id);
+          });
       };
     }) //closes edit controller
+
     .controller('ShowController', function($routeParams, $scope, $location,  childFactory){
       var vm = this,
           id = $routeParams.childId;
-    vm.childId = id;
+
+      vm.childId = id;
+      vm.photo = "";
+
+      vm.savePhoto = function(){
+        vm.child.photo = vm.photo.base64;
+        childFactory.savePhoto(id, vm.child)
+        .success(function(res){
+          vm.photo = "";
+          $location.path('/children/' + id);
+        });
+      }
 
       childFactory.getChild(id, function(data){
         vm.child = data;

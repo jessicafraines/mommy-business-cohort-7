@@ -1,6 +1,12 @@
 <h1>{{show.child.name}}</h1>
-<!--<div ng-repeat="(photoId, photo) in show.photos">
-  <div><img class="child-img" ng-src="https://s3.amazonaws.com/mommy-business-jessicafraines-com-images/{{show.childId}}/[[photoId}}.jpg"></div>-->
+
+<form>
+  <input type="file" ng-model="show.photo" base-sixty-four-input>
+</form>
+<img ng-show="show.photo" src="data:image/png;base64,{{show.photo.base64}}" style="width: 150px;">
+<a ng-show="show.photo" href="" ng-click="show.savePhoto()">save photo</a>
+
+<img src="data:image/png;base64,{{show.child.photo}}" style="width: 150px;">
 
 <h4>Growth Chart</h4>
 <table class="table table-bordered">
