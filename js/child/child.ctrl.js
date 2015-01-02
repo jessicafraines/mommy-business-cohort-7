@@ -8,8 +8,22 @@
     vm.childId = id;
 
       childFactory.getChildren(function(data){
-        vm.children = data;
+        vm.children = vm.calcAges(data);
       });
+
+      vm.calcAges = function(children){
+        var kids = Object.keys(children);
+        kids.forEach(function(k){
+          var dob = moment(children[k].dob);
+          var now = moment();
+          children[k].age = {
+            years: now.diff(dob, 'years'),
+            months: Math.floor(now.diff(dob, 'months') / 12) + 1
+          };
+        });
+        return children;
+      };
+
       vm.addChild = function(){
         childFactory.createChild(vm.newChild, function(data){
           vm.children= vm.children || {};
