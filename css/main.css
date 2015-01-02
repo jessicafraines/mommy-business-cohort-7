@@ -1,4 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Give+You+Glory|Dancing+Script|Satisfy|Kranky|Mountains+of+Christmas|Miltonian+Tattoo);
+@import url(http://fonts.googleapis.com/css?family=Ribeye|Chela+One|Rozha+One|Antic+Didone|Purple+Purse|Gorditas|Miltonian);
+
+.navbar{
+  border-top: 5px solid #FBDC89;
+  border-bottom: 5px solid #FBDC89;
+}
 
 .navbar-header img {
   width: 50px;
@@ -7,20 +13,35 @@
 }
 .navbar > .container .navbar-brand{
   font-size: 35px;
-  font-family: 'Miltonian Tatoo', cursive;
+  font-family: 'Miltonian', cursive;
+  color: #C4D96B;
 }
 .navbar-default .navbar-nav > li > a {
-  font-family: 'Miltonian Tatoo', cursive;
+  font-family: 'Purple Purse', cursive;
 }
+.navbar-default .navbar-nav .home {
+  color: #A8D8C0;
+}
+.navbar-default .navbar-nav .children {
+  color: #8BC0CE;
+}
+.navbar-default .navbar-nav .logout {
+  color: #F8B3B6;
+}
+
 .body {
   background-image: url('/img/feet.jpg');
   background-size: cover;
+  color: #D26EB0;
 }
 
 p{
   text-align: left;
   margin: 50px 850px 0px 0px;
   font-size: 20px;
+}
+.btn {
+  background-color: #E75156;
 }
 table{
   background-color: #f6f6f6;
