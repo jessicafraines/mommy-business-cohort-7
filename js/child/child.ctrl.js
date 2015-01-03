@@ -156,5 +156,9 @@
         });
       };
 
+      vm.cancelForm = function(){
+        $location.path('/children/' + id);
+      };
+
     }) //closes show controller
 }());
