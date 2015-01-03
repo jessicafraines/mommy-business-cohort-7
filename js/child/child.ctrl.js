@@ -5,7 +5,8 @@
     .controller('ChildController', function($routeParams, childFactory){
       var vm = this,
           id = $routeParams.childId;
-    vm.childId = id;
+
+      vm.childId = id;
 
       childFactory.getChildren(function(data){
         vm.children = vm.calcAges(data);
@@ -30,6 +31,7 @@
           vm.children[data.name] = vm.newChild;
         });
       };
+
     }) //closes child controller
 
     .controller('EditController', function($location, $scope, $routeParams, childFactory){
@@ -42,30 +44,40 @@
       childFactory.getMilestone(id, milestoneId, function(data){
         vm.newMilestone = data;
       });
+
       vm.addMilestone = function(){
         childFactory.editMilestone(id, milestoneId, vm.newMilestone)
         .success(function(data){
           $location.path('/children/' + id);
         });
       };
+
       childFactory.getGrowth(id, growthId, function(data){
         vm.newGrowth = data;
       });
+
       vm.addGrowth = function(){
         childFactory.editGrowth(id, growthId, vm.newGrowth)
           .success(function(data){
             $location.path('/children/' + id);
           });
       };
+
       childFactory.getAppt(id, apptId, function(data){
         vm.newAppt = data;
       });
+
       vm.addAppt = function(){
         childFactory.editAppt(id, apptId, vm.newAppt)
           .success(function(data){
             $location.path('/children/' + id);
           });
       };
+
+      vm.cancelForm = function(){
+        $location.path('/children/' + id);
+      };
+
     }) //closes edit controller
 
     .controller('ShowController', function($routeParams, $scope, $location,  childFactory){
@@ -87,6 +99,7 @@
       childFactory.getChild(id, function(data){
         vm.child = data;
       });
+
       vm.addMilestone = function(){
         childFactory.createMilestone(id, vm.newMilestone, function(data){
           vm.milestones = vm.milestones || {};
@@ -95,6 +108,7 @@
           $scope.$apply();
         });
       };
+
       childFactory.getMilestones(id, function(data){
         vm.milestones = data;
       });
@@ -104,6 +118,7 @@
           delete vm.milestones[milestoneId];
         });
       };
+
       vm.addGrowth = function(){
         childFactory.createGrowth(id, vm.newGrowth, function(data){
           vm.growths = vm.growths || {};
@@ -112,6 +127,7 @@
           $scope.$apply();
         });
       };
+
       childFactory.getGrowths(id, function(data){
         vm.growths = data;
       });
@@ -121,14 +137,15 @@
           delete vm.growths[growthId];
         });
       };
+
       vm.addAppt = function(){
         childFactory.createAppt(id, vm.newAppt, function(data){
           vm.appts = vm.appts || {};
           vm.appts[data.date] = vm.newAppt;
           $location.path('/children/' + id);
-          //$scope.$apply();
         });
       };
+
       childFactory.getAppts(id, function(data){
         vm.appts = data;
       });
