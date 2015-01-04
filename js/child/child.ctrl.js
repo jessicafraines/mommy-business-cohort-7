@@ -14,6 +14,7 @@
 
       vm.calcAges = function(children){
         var kids = Object.keys(children);
+        console.log('KIDS', kids);
         kids.forEach(function(k){
           var dob = moment(children[k].dob);
           var now = moment();
@@ -97,7 +98,7 @@
       }
 
       childFactory.getChild(id, function(data){
-        vm.child = data;
+        vm.child = vm.calcAge(data);
       });
 
       vm.addMilestone = function(){
@@ -105,7 +106,6 @@
           vm.milestones = vm.milestones || {};
           vm.milestones[data.date] = vm.newMilestone;
           $location.path('/children/' + id);
-          $scope.$apply();
         });
       };
 
@@ -124,7 +124,6 @@
           vm.growths = vm.growths || {};
           vm.growths[data.date] = vm.newGrowth;
           $location.path('/children/' + id);
-          $scope.$apply();
         });
       };
 
@@ -158,6 +157,16 @@
 
       vm.cancelForm = function(){
         $location.path('/children/' + id);
+      };
+
+      vm.calcAge = function(child){
+        var dob = moment(child.dob);
+        var now = moment();
+          child.age = {
+            years: now.diff(dob, 'years'),
+            months: Math.floor(now.diff(dob, 'months') / 12) + 1
+          };
+        return child;
       };
 
     }) //closes show controller
