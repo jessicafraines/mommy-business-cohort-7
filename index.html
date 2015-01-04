@@ -16,9 +16,9 @@
         </div>
         <div id="bs-navbar-collapse" class="collapse navbar-collapse">
           <ul ng-hide="user" class="nav navbar-nav navbar-right">
-            <li><a href="/#/">Home</a></li>
-            <li><a href="/#/register">Register</a></li>
-            <li><a class="login" href="/#/login">Login</a></li>
+            <li><a class="home" href="/#/">Home</a></li>
+            <li><a class="children" href="/#/register">Register</a></li>
+            <li><a data-toggle="modal" data-target="#login" class="login logout" href="/#/login">Login</a></li>
           </ul>
           <ul ng-show="user" class="nav navbar-nav navbar-right">
             <li><a class="home" href="/#/">Home</a></li>

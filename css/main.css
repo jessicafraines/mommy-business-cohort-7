@@ -2,17 +2,9 @@
 @import url(http://fonts.googleapis.com/css?family=Ribeye|Chela+One|Rozha+One|Antic+Didone|Purple+Purse|Gorditas|Miltonian);
 
 
-html, body {
-  height:100%;
-  width: 100%;
-}
 
-.container {
-  height: 100%;
-  width:100%;
-  padding:0;
-  margin:0;
-}
+/*navbar styling*/
+
 .navbar{
   border-top: 5px solid #FBDC89;
   border-bottom: 5px solid #FBDC89;
@@ -20,55 +12,44 @@ html, body {
   height: 100px;
   padding: 20px;
 }
-div[ng-view] {
-  height:100%;
-}
-
-.fullHeight {
-  height: 100%;
-}
 
 .navbar-header img {
   width: 50px;
   height: 50px;
   border-radius: 100px;
 }
+
 .navbar > .container .navbar-brand{
-  font-size: 40px;
+  font-size: 55px;
   font-family: 'Miltonian', cursive;
   color: #C4D96B;
 }
+
 .navbar-default .navbar-nav > li > a {
   font-family: 'Purple Purse', cursive;
   font-size: 20px;
 }
+
 .navbar-default .navbar-nav .home {
-  color: #A8D8C0;
+  color: #A8D8C0 !important;
 }
+
 .navbar-default .navbar-nav .children {
-  color: #8BC0CE;
+  color: #8BC0CE !important;
 }
+
 .navbar-default .navbar-nav .logout {
-  color: #F8B3B6;
+  color: #F8B3B6 !important;
 }
 
-.body {
-  background-image: url('/img/feet.jpg');
-  background-size: cover;
-  color: #D26EB0;
+
+/*buttons*/
+.editPhoto {
+  margin: 20px;
 }
 
-p{
-  text-align: left;
-  margin: 50px 850px 0px 0px;
-  font-size: 20px;
-}
-.btn {
-  background-color: #E75156;
-}
-table{
-  background-color: #f6f6f6;
-}
+/*images*/
+
 div.child{
   background-color: #f6f6f6;
   width: 250px;
@@ -82,30 +63,83 @@ div.child{
     -moz-box-shadow: 0 10px 6px -6px #777;
           box-shadow: 0 10px 6px -6px #777;
 }
+
 div.child img{
   border-radius: 50px;
   height: 100px;
   width: 100px;
 }
+
+img.childImg {
+  margin: 20px;
+}
+
+/*child show page*/
+.childInfo {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  color: #02779E;
+  text-align: center;
+}
+
+
+/*modal styling*/
+
 .modal-body{
   background-color: #f6f6f6;
 }
+
 .modal-header{
   background-color: grey;
   color: #f6f6f6;
   text-align: center;
 }
+
 .modal-header .close{
   color: #f6f6f6;
 }
+
 .table-bordered{
   margin: 0;
 }
+
+/*background images/colors*/
+
+html, body {
+  height:100%;
+  width: 100%;
+}
+
+.container {
+  height: 100%;
+  width:100%;
+  padding:0;
+  margin:0;
+}
+
+div[ng-view] {
+  height:100%;
+}
+
+.fullHeight {
+  height: 100%;
+}
+
 .whiteBackground {
   background-color: white;
   margin: 0px;
   background-size: cover;
 }
+
+.body {
+  background-image: url('/img/feet.jpg');
+  background-size: cover;
+  color: #D26EB0;
+}
+
+
+/*photo styling*/
+
 #editPhoto {
   border: 1px solid black;
   width: 100%;
@@ -120,4 +154,20 @@ div.child img{
   width: 250px;
   border:1px solid black;
   text-align: center;
+}
+
+/*misc*/
+
+p{
+  text-align: left;
+  margin: 50px 850px 0px 0px;
+  font-size: 20px;
+}
+
+.btn {
+  background-color: #E75156;
+}
+
+table{
+  background-color: #f6f6f6;
 }
