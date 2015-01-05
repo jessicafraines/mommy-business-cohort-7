@@ -9,25 +9,34 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body class="body">
-    <div role="navigation" class="navbar navbar-default">
+  <div style="position:fixed; z-index:1;">
+    <div id="green"></div>
+    <div id="blue"></div>
+    <div id="yellow"></div>
+    <div id="pink"></div>
+    <div id="purple"></div>
+    <div id="orange"></div>
+    <div id="lime"></div>
+  </div>
+    <div role="navigation" class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header"><img src="../img/dj.jpg"/>
           <button data-toggle="collapse" data-target="#bs-navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand">mommy business</a>
         </div>
-        <div id="bs-navbar-collapse" class="collapse navbar-collapse">
-          <ul ng-hide="user" class="nav navbar-nav navbar-right">
-            <li><a class="home" href="/#/">Home</a></li>
-            <li><a class="children" href="/#/register">Register</a></li>
-            <li><a data-toggle="modal" data-target="#login" class="login logout" href="/#/login">Login</a></li>
-          </ul>
-          <ul ng-show="user" class="nav navbar-nav navbar-right">
-            <li><a class="home" href="/#/">Home</a></li>
-            <li><a class="children" href="/#/children">Children</a></li>
-            <li><a class="logout" href="/#/logout">Logout</a></li>
-          </ul>
+          <div id="bs-navbar-collapse" class="collapse navbar-collapse">
+            <ul ng-hide="user" class="nav navbar-nav navbar-right">
+              <li><a class="home" href="/#/">Home</a></li>
+              <li><a class="children" href="/#/register">Register</a></li>
+              <li><a data-toggle="modal" data-target="#login" class="login logout" href="/#/login">Login</a></li>
+            </ul>
+            <ul ng-show="user" class="nav navbar-nav navbar-right">
+              <li><a class="home" href="/#/">Home</a></li>
+              <li><a class="children" href="/#/children">Children</a></li>
+              <li><a class="logout" href="/#/logout">Logout</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
     <div class="container">
       <div ng-view>
       </div>

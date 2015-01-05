@@ -6,9 +6,9 @@
 /*navbar styling*/
 
 .navbar{
-  border-top: 5px solid #FBDC89;
+  /*border-top: 5px solid #FBDC89;
   border-bottom: 5px solid #FBDC89;
-  margin-bottom: 0px;
+  margin-bottom: 0px;*/
   height: 100px;
   padding: 20px;
 }
@@ -41,7 +41,44 @@
 .navbar-default .navbar-nav .logout {
   color: #F8B3B6 !important;
 }
+#green {
+    border: 5px solid #A8D8C0;
+    float: left;
+    width: 163px !important;
+}
 
+#blue {
+    border: 5px solid #8BC0CE;
+    float: left;
+    width: 163px !important;
+}
+
+#pink {
+    border: 5px solid #F8B3B6;
+    float: left;
+    width: 163px !important;
+}
+
+#orange {
+    border: 5px solid #FFC48C;
+    float: left;
+    width: 163px !important;
+}
+#yellow {
+    border: 5px solid #FBFCD0;
+    float: left;
+    width: 163px !important;
+}
+#purple {
+    border: 5px solid #EFE3F3;
+    float: left;
+    width: 163px !important;
+}
+#lime {
+    border: 5px solid #C4D96B;
+    float: left;
+    width: 163px !important;
+}
 
 /*buttons*/
 .editPhoto {
@@ -126,7 +163,7 @@ div[ng-view] {
 }
 
 .whiteBackground {
-  background-color: white;
+  background-color: #f8f8f8;
   margin: 0px;
   background-size: cover;
 }
@@ -135,6 +172,7 @@ div[ng-view] {
   background-image: url('/img/feet.jpg');
   background-size: cover;
   color: #D26EB0;
+  padding-top: 100px;
 }
 
 
@@ -158,9 +196,33 @@ div[ng-view] {
 
 /*misc*/
 
+.glow {
+   -webkit-stroke-width: 5.3px;
+   -webkit-stroke-color: #FFFFFF;
+   -webkit-fill-color: #FFFFFF;
+   text-shadow: 1px 0px 20px white;
+   -webkit-transition: width 0.3s; /*Safari & Chrome*/
+   transition: width 0.3s;
+   -moz-transition: width 0.3s; /* Firefox 4 */
+   -o-transition: width 0.3s; /* Opera */
+   text-align: center;
+   font-family: 'Purple Purse', cursive;
+   color: #C4D96B;
+}
+.shroud {
+  height: 50%;
+  width: 100%;
+  padding-top: 60px;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top:200px;
+  bottom:0;
+  left:0;
+  z-index: 1;
+}
+
+
 p{
-  text-align: left;
-  margin: 50px 850px 0px 0px;
   font-size: 20px;
 }
 
