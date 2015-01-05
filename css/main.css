@@ -17,6 +17,7 @@
   width: 50px;
   height: 50px;
   border-radius: 100px;
+  margin: 0px;
 }
 
 .navbar > .container .navbar-brand{
@@ -207,7 +208,7 @@ div[ng-view] {
    -o-transition: width 0.3s; /* Opera */
    text-align: center;
    font-family: 'Purple Purse', cursive;
-   color: #C4D96B;
+   color: #f8f8f8;
 }
 .shroud {
   height: 50%;
