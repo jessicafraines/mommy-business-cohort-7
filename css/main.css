@@ -22,7 +22,7 @@
 
 .navbar > .container .navbar-brand{
   font-size: 55px;
-  font-family: 'Miltonian', cursive;
+  font-family: 'Purple Purse', cursive;
   color: #C4D96B;
 }
 
@@ -86,33 +86,66 @@
   margin: 20px;
 }
 
-/*images*/
+.btn {
+  background-color: #C4D96B !important;
+  font-family: 'Antic Didone', serif;
+  color: white !important;
+}
+
+.look-btn {
+  background-color: #F8B3B6 !important;
+  font-family: 'Antic Didone', serif;
+}
+
+.child-btn {
+  background-color: white !important;
+}
+.glyph {
+  color: grey;
+}
+
+
+/* children index page */
+
+.add-child-color {
+  color: #D26EB0 !important;
+  font-family: 'Antic Didone', serif;
+}
 
 div.child{
   background-color: #f6f6f6;
-  width: 250px;
-  height: 250px;
+  font-family: 'Purple Purse', cursive;
+  font-size: 16px;
+  width: 210px;
+  height: 260px;
   margin: 20px;
   padding-top: 20px;
-  border-radius: 150px;
+  border-radius: 60px;
   text-align: center;
   display: inline-block;
+  color: darkgrey;
   -webkit-box-shadow: 0 10px 6px -6px #777;
     -moz-box-shadow: 0 10px 6px -6px #777;
           box-shadow: 0 10px 6px -6px #777;
 }
 
+h4 {
+  font-size: 16px;
+}
 div.child img{
   border-radius: 50px;
   height: 100px;
   width: 100px;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+          box-shadow: 0 10px 6px -6px #777;
 }
 
+/* child show page */
 img.childImg {
   margin: 20px;
 }
 
-/*child show page*/
 .childInfo {
   margin-left: 20px;
   margin-bottom: 10px;
@@ -227,10 +260,6 @@ p{
   font-size: 20px;
 }
 
-.btn {
-  background-color: #C4D96B !important;
-  font-family: 'Antic Didone', serif;
-}
 
 table{
   background-color: #f6f6f6;
@@ -270,6 +299,10 @@ input::-moz-placeholder {  /* Firefox 19+ */
 }
 
 input:-ms-input-placeholder {  
+   color: #D26EB0 !important;  
+   font-family: 'Antic Didone', serif;
+}
+.form-control {
    color: #D26EB0 !important;  
    font-family: 'Antic Didone', serif;
 }

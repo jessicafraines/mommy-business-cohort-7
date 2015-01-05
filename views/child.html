@@ -1,5 +1,5 @@
-<div class="row fullHeight" style="background-color:#f8f8f8;">
-  <div class="col-xs-12 fullHeight">
+<div class="row" style="background-color:#f8f8f8;">
+  <div class="col-xs-12">
     <div class="row">
       <div class="col-xs-4">
         <img class="childImg" src="data:image/png;base64,{{show.child.photo}}" style="width: 150px;">
@@ -9,7 +9,7 @@
         <h4 class="childInfo" ng-hide="show.child.age.years < 1">{{show.child.age.years}} year(s) old</h4>
         <h4 class="childInfo" ng-hide="show.child.age.years >= 1">{{show.child.age.months}} month(s) old</h4>
       </div>
-      <div class="col-xs-3" style="border:solid 1px black; margin:10px; background-color:#F6F4C2;">
+      <div class="col-xs-3" style="border:solid 1px black; margin:10px; margin-top:20px; background-color:#F6F4C2;">
         <h4 class="childInfo">{{show.child.name}}'s birth information</h4>
         <h5 class="childInfo">born at: {{show.child.tob | date:"shortTime"}}</h5>
         <h5 class="childInfo">length was: {{show.child.lab}}"</h5>
@@ -101,31 +101,33 @@
             </td>
           </tr>
         </table>
-      </div>
-      <div class="col-xs-2"></div>
-    </div>
-    <div>
-      <a class="btn btn-primary" href="/#/children/{{show.childId}}/appointments/new">add appointment</a>
-    </div>
-
-    <!--Photo Modal-->
-    <div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="photoModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="photoModalLabel">Edit a Photo</h4>
-          </div>
-          <div class="modal-body" style="text-align:center;">
-            <h2>Select your photo...</h2>
-            <form id="editPhoto">
-              <input type="file" ng-model="show.photo" base-sixty-four-input>
-            </form>
-            <img id="photo_file" ng-show="show.photo" src="data:image/png;base64,{{show.photo.base64}}" style="width: 150px; border-radius:3px;">
-            <a ng-show="show.photo" href="" data-dismiss="modal" ng-click="show.savePhoto()">save photo</a>
-          </div>
+        <div>
+          <a class="btn btn-primary" href="/#/children/{{show.childId}}/appointments/new">add appointment</a>
         </div>
       </div>
+    <div class="col-xs-2"></div>
+    <div class="col-xs-4">
+    <h1>medicine table going here</h2>
     </div>
   </div>  
+</div>
+
+    <!--Photo Modal-->
+<div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="photoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="photoModalLabel">Edit a Photo</h4>
+      </div>
+      <div class="modal-body" style="text-align:center;">
+        <h2>Select your photo...</h2>
+        <form id="editPhoto">
+          <input type="file" ng-model="show.photo" base-sixty-four-input>
+        </form>
+        <img id="photo_file" ng-show="show.photo" src="data:image/png;base64,{{show.photo.base64}}" style="width: 150px; border-radius:3px;">
+        <a ng-show="show.photo" href="" data-dismiss="modal" ng-click="show.savePhoto()">save photo</a>
+      </div>
+    </div>
+  </div>
 </div>

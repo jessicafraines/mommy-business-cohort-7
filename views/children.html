@@ -1,15 +1,61 @@
-<div class="row fullHeight" style="background-image: url(http://th01.deviantart.net/fs71/PRE/f/2010/193/c/d/Shoujo_style_Background_by_alliaxandromeda.png); background-size: cover;">
-  <div class="col-xs-12 fullHeight" style="background-color: rgba(0, 0, 0, 0.3);">
+<div class="row" style="background-image: url(http://th01.deviantart.net/fs71/PRE/f/2010/193/c/d/Shoujo_style_Background_by_alliaxandromeda.png); background-size: cover;">
+  <div class="col-xs-12">
+  <div>
+    <button style="margin-top:40px; margin-left:40px; z-index:1; border-radius:10px;" type="button" class="btn btn-default child-btn" data-toggle="modal" data-target="#addChildModal"><span class="glyphicon glyphicon-plus glyph"></span></button>
+  </div>
   <div class="child" ng-repeat="(childId, kid) in child.children">
     <img ng-hide="kid.photo" src="/img/baby.jpg">
     <img class="childrenImages" ng-show="kid.photo" src="data:image/png;base64,{{kid.photo}}">
     <h4>{{kid.name}}</h4>
     <h4>{{kid.dob | date:"MM-dd-yyyy"}}</h4>
     <h4><span ng-hide="kid.age.years < 1">{{kid.age.years}} year(s)old</span><span ng-hide="kid.age.years >= 1">{{kid.age.months}} month(s)old</span></h4>
-    <a class="btn btn-primary" href="/#/children/{{childId}}">Look at {{kid.name}}</a>
+    <a class="btn btn-primary look-btn" href="/#/children/{{childId}}">edit</a>
+    <!--<button ng-click="child.deleteKid(kid)">x</button>-->
   </div>
-  <div>
-    <a class="btn btn-primary" href="/#/new">add a child</a>
   </div>
+</div>
+
+<!--Add Child Modal-->
+<div class="modal fade" id="addChildModal" tabindex="-1" role="dialog" aria-labelledby="addChildLabel" aria-hidden="true">
+  <div class="modal-dialog" style="width:350px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="addChildLabel"></h4>
+      </div>
+      <div class="modal-body" style="text-align:center;">
+        <h4 class="login-title">Mommy Business</h4>
+        <img class="login" src="../img/dj.jpg"/>
+        <form name="addChildForm" ng-click="addChildForm.$valid && child.addChild()" novalidate>
+          <div class="form-group" ng-class="{'has-error': !child.child.name}">
+            <label class="control-label add-child-color">name</label>
+            <input class="form-control" type="text" ng-model="child.newChild.name" required>
+          </div>
+          <div class="form-group" ng-class="{'has-error': !child.child.dob}">
+            <label class="control-label add-child-color">date of birth</label>
+            <input class="form-control" type="date" ng-model="child.newChild.dob" required>
+          </div>
+          <div class="form-group" ng-class="{'has-error': !child.child.tob}">
+            <label class="control-label add-child-color">time of birth</label>
+            <input class="form-control" type="time" ng-model="child.newChild.tob">
+          </div>
+          <label class="control-label add-child-color">weight at birth</label>
+          <div class="form-group" ng-class="{'has-error': !child.child.pab}">
+            <label class="control-label" style="color:darkgrey;">lbs</label>
+            <input class="form-control" type="number" ng-model="child.newChild.pab">
+          </div>
+          <div class="form-group" ng-class="{'has-error': !child.child.oab}">
+            <label class="control-label" style="color:darkgrey;">oz</label>
+            <input class="form-control" type="number" ng-model="child.newChild.oab">
+          </div>
+          <div class="form-group" ng-class="{'has-error': !child.child.lab}">
+            <label class="control-label add-child-color">length at birth</label>
+            <input class="form-control" type="number" ng-model="child.newChild.lab">
+          </div>
+          <!--<input type="submit" value="add child" ng-disabled="addChildForm.$invalid">-->
+        </form>
+        <button class="btn btn-primary" type="button" data-dismiss="modal" ng-click="child.addChild()">add child</button>
+      </div>
+    </div>
   </div>
 </div>
