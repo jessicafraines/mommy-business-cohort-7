@@ -128,7 +128,7 @@ img.childImg {
 }
 
 .modal-header{
-  background-color: grey;
+  background-color: lightgrey;
   color: #f6f6f6;
   text-align: center;
 }
@@ -228,13 +228,14 @@ p{
 }
 
 .btn {
-  background-color: #E75156;
+  background-color: #C4D96B !important;
+  font-family: 'Antic Didone', serif;
 }
 
 table{
   background-color: #f6f6f6;
 }
-/*login*/
+/* login /register */
 img.login {
   width: 50px;
   height: 50px;
@@ -253,4 +254,22 @@ img.login {
 .login-color {
   color: darkgrey;
 }
+input::-webkit-input-placeholder {
+   color: #D26EB0 !important;
+   font-family: 'Antic Didone', serif;
+}
 
+input:-moz-placeholder { /* Firefox 18- */
+   color: #D26EB0 !important;  
+   font-family: 'Antic Didone', serif;
+}
+
+input::-moz-placeholder {  /* Firefox 19+ */
+   color: #D26EB0 !important;  
+   font-family: 'Antic Didone', serif;
+}
+
+input:-ms-input-placeholder {  
+   color: #D26EB0 !important;  
+   font-family: 'Antic Didone', serif;
+}
