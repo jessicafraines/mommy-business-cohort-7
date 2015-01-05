@@ -234,3 +234,23 @@ p{
 table{
   background-color: #f6f6f6;
 }
+/*login*/
+img.login {
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  margin: 0px;
+  margin-bottom: 10px;
+}
+.password {
+  font-size: 10px;
+}
+.login-title {
+  font-family: 'Miltonian', cursive;
+  color: #C4D96B;
+}
+
+.login-color {
+  color: darkgrey;
+}
+
