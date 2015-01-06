@@ -14,7 +14,6 @@
 
       vm.calcAges = function(children){
         var kids = Object.keys(children);
-        console.log('KIDS', kids);
         kids.forEach(function(k){
           var dob = moment(children[k].dob);
           var now = moment();
@@ -54,6 +53,10 @@
 
       childFactory.getAppt(id, apptId, function(data){
         vm.newAppt = data;
+      });
+      
+      childFactory.getGrowth(id, growthId, function(data){
+        vm.newGrowth = data;
       });
 
       vm.addMilestone = function(){
