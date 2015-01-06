@@ -105,8 +105,9 @@
 }
 
 .look-btn {
-  background-color: #F8B3B6 !important;
+  background-color: #4C3535 !important;
   font-family: 'Antic Didone', serif;
+  margin-top: 5px !important
 }
 
 .child-btn {

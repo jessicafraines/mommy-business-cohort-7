@@ -46,6 +46,10 @@
         vm.newMilestone = data;
       });
 
+      childFactory.getAppt(id, apptId, function(data){
+        vm.newAppt = data;
+      });
+
       vm.addMilestone = function(){
         childFactory.editMilestone(id, milestoneId, vm.newMilestone)
         .success(function(data){
@@ -53,23 +57,15 @@
         });
       };
 
-      childFactory.getGrowth(id, growthId, function(data){
-        vm.newGrowth = data;
-      });
-
-      vm.addGrowth = function(){
-        childFactory.editGrowth(id, growthId, vm.newGrowth)
+      vm.addAppt = function(){
+        childFactory.editAppt(id, apptId, vm.newAppt)
           .success(function(data){
             $location.path('/children/' + id);
           });
       };
 
-      childFactory.getAppt(id, apptId, function(data){
-        vm.newAppt = data;
-      });
-
-      vm.addAppt = function(){
-        childFactory.editAppt(id, apptId, vm.newAppt)
+      vm.addGrowth = function(){
+        childFactory.editGrowth(id, growthId, vm.newGrowth)
           .success(function(data){
             $location.path('/children/' + id);
           });
@@ -88,6 +84,22 @@
       vm.childId = id;
       vm.photo = "";
 
+      childFactory.getChild(id, function(data){
+        vm.child = vm.calcAge(data);
+      });
+
+      childFactory.getMilestones(id, function(data){
+        vm.milestones = data;
+      });
+
+      childFactory.getAppts(id, function(data){
+        vm.appts = data;
+      });
+
+      childFactory.getGrowths(id, function(data){
+        vm.growths = data;
+      });
+
       vm.savePhoto = function(){
         vm.child.photo = vm.photo.base64;
         childFactory.savePhoto(id, vm.child)
@@ -97,43 +109,11 @@
         });
       }
 
-      childFactory.getChild(id, function(data){
-        vm.child = vm.calcAge(data);
-      });
-
       vm.addMilestone = function(){
         childFactory.createMilestone(id, vm.newMilestone, function(data){
           vm.milestones = vm.milestones || {};
           vm.milestones[data.date] = vm.newMilestone;
           $location.path('/children/' + id);
-        });
-      };
-
-      childFactory.getMilestones(id, function(data){
-        vm.milestones = data;
-      });
-
-      vm.deleteMilestone = function(milestoneId){
-        childFactory.deleteMilestone(id, milestoneId, function(){
-          delete vm.milestones[milestoneId];
-        });
-      };
-
-      vm.addGrowth = function(){
-        childFactory.createGrowth(id, vm.newGrowth, function(data){
-          vm.growths = vm.growths || {};
-          vm.growths[data.date] = vm.newGrowth;
-          $location.path('/children/' + id);
-        });
-      };
-
-      childFactory.getGrowths(id, function(data){
-        vm.growths = data;
-      });
-
-      vm.deleteGrowth = function(growthId){
-        childFactory.deleteGrowth(id, growthId, function(){
-          delete vm.growths[growthId];
         });
       };
 
@@ -145,13 +125,29 @@
         });
       };
 
-      childFactory.getAppts(id, function(data){
-        vm.appts = data;
-      });
+      vm.addGrowth = function(){
+        childFactory.createGrowth(id, vm.newGrowth, function(data){
+          vm.growths = vm.growths || {};
+          vm.growths[data.date] = vm.newGrowth;
+          $location.path('/children/' + id);
+        });
+      };
+
+      vm.deleteMilestone = function(milestoneId){
+        childFactory.deleteMilestone(id, milestoneId, function(){
+          delete vm.milestones[milestoneId];
+        });
+      };
 
       vm.deleteAppt = function(apptId){
         childFactory.deleteAppt(id, apptId, function(){
           delete vm.appts[apptId];
+        });
+      };
+
+      vm.deleteGrowth = function(growthId){
+        childFactory.deleteGrowth(id, growthId, function(){
+          delete vm.growths[growthId];
         });
       };
 
