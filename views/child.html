@@ -1,31 +1,35 @@
-<div class="row" style="background-color:#f8f8f8;">
+<div class="row" style="background-color:#FCF9F9;">
   <div class="col-xs-12">
     <div class="row">
       <div class="col-xs-4">
         <img class="childImg" src="data:image/png;base64,{{show.child.photo}}" style="width: 150px;">
       </div>
-      <div class="col-xs-4">
-        <h1 class="childInfo">{{show.child.name}} is</h1>
-        <h4 class="childInfo" ng-hide="show.child.age.years < 1">{{show.child.age.years}} year(s) old</h4>
-        <h4 class="childInfo" ng-hide="show.child.age.years >= 1">{{show.child.age.months}} month(s) old</h4>
+      <div class="col-xs-2">
+        <!--<h1 class="childInfo" style="font-size:30px;">{{show.child.name}}</h1>
+        <h4 class="childInfo" ng-hide="show.child.age.years < 1">is {{show.child.age.years}} year(s) old</h4>
+        <h4 class="childInfo" ng-hide="show.child.age.years >= 1">is {{show.child.age.months}} month(s) old</h4>-->
       </div>
-      <div class="col-xs-3" style="border:solid 1px black; margin:10px; margin-top:20px; background-color:#F6F4C2;">
+      <div class="col-xs-5" id="stretch">
         <h4 class="childInfo">{{show.child.name}}'s birth information</h4>
+        <h5 class="childInfo">born on: {{show.child.dob | date:"MM-dd-yyyy"}}</h5>
         <h5 class="childInfo">born at: {{show.child.tob | date:"shortTime"}}</h5>
-        <h5 class="childInfo">length was: {{show.child.lab}}"</h5>
+        <h5 class="childInfo">length was: {{show.child.lab}}</h5>
         <h5 class="childInfo">weight was: {{show.child.pab}}lbs{{show.child.oab}}oz</h5>
+        <h5 class="childInfo" ng-hide="show.child.age.years < 1">today {{show.child.name}} is {{show.child.age.years}} year(s) old</h5>
+        <h5 class="childInfo" ng-hide="show.child.age.years >= 1">today {{show.child.name}} is {{show.child.age.months}} month(s) old</h5>
       </div>
       <div class="col-xs-1"></div>
     </div> 
     <div class="row">
       <div class="col-xs-6">
-        <button type="button" class="btn btn-primary editPhoto" data-toggle="modal" data-target="#photoModal">Edit Photo</button>
+        <button ng-show="show.child.photo" type="button" class="btn btn-primary editPhoto" data-toggle="modal" data-target="#photoModal">Edit Photo</button>
+        <button ng-hide="show.child.photo" type="button" class="btn btn-primary editPhoto" data-toggle="modal" data-target="#photoModal">Add Photo</button>
       </div>
       <div class="col-xs-6"></div>
     </div>
     <div class="row">
       <div class="col-xs-1"></div>
-      <div class="col-xs-4">
+      <div class="col-xs-5">
         <h4>Growth Chart</h4>
         <table class="table table-bordered">
           <thead>
