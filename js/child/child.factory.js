@@ -168,8 +168,8 @@
       return $http.put(_growthsUrl(childId, growthId), growth);
     }
 
-    function deleteKid(childId, cb){
-      $http.delete(_childUrl(childId))
+    function deleteKid(id, cb){
+      $http.delete(_childUrl(id))
       .success(function(){
         cb();
       })

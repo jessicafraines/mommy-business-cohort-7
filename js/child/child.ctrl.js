@@ -33,6 +33,12 @@
         });
       };
 
+      vm.deleteKid = function(id){
+        childFactory.deleteKid(id, function(){
+            delete vm.children[id];
+        });
+      };
+
     }) //closes child controller
 
     .controller('EditController', function($location, $scope, $routeParams, childFactory){

@@ -11,7 +11,9 @@
     <h4>{{kid.dob | date:"MM-dd-yyyy"}}</h4>
     <h4><span ng-hide="kid.age.years < 1">{{kid.age.years}} year(s)old</span><span ng-hide="kid.age.years >= 1">{{kid.age.months}} month(s)old</span></h4>
     <a class="btn btn-primary look-btn" href="/#/children/{{childId}}">edit</a>
-    <!--<button ng-click="child.deleteKid(kid)">x</button>-->
+    <div>
+      <button ng-click="child.deleteKid(childId)">x</button>
+    </div>
   </div>
   </div>
 </div>
