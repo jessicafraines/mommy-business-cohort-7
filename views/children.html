@@ -7,7 +7,7 @@
   <div class="child" ng-repeat="(childId, kid) in child.children">
     <img ng-hide="kid.photo" src="/img/baby.jpg">
     <img class="childrenImages" ng-show="kid.photo" src="data:image/png;base64,{{kid.photo}}">
-    <h4>{{kid.name}}</h4>
+    <h4 class="cap">{{kid.name}}</h4>
     <h4>{{kid.dob | date:"MM-dd-yyyy"}}</h4>
     <h4><span ng-hide="kid.age.years < 1">{{kid.age.years}} year(s)old</span><span ng-hide="kid.age.years >= 1">{{kid.age.months}} month(s)old</span></h4>
     <a class="btn btn-primary look-btn" href="/#/children/{{childId}}">edit</a>

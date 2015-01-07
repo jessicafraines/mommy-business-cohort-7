@@ -1,12 +1,12 @@
 ;(function(){
   'use strict';
   angular.module('mommyApp')
-  .factory('accountFactory', function($rootScope, $location, FIREBASE_URL){
+  .factory('accountFactory', function($rootScope, $location, FIREBASE_URL) {
     var acctFactory = {},
         ref = new Firebase(FIREBASE_URL);
     $rootScope.user = ref.getAuth();
 
-    acctFactory.requireLogin = function(){
+    acctFactory.requireLogin = function() {
       if (!_isLoggedIn()) {
         $location.path('/login');
       } else if (_hasTempPassword()) {
@@ -14,17 +14,17 @@
       }
     };
 
-    acctFactory.disallowLogin = function(){
+    acctFactory.disallowLogin = function() {
       if (_isLoggedIn()) {
         $location.path('/children');
       } 
     };
 
-    acctFactory.login = function(email, pswd, cb){
+    acctFactory.login = function(email, pswd, cb) {
       ref.authWithPassword({
         email : email,
         password : pswd
-      }, function(error, authData){
+      }, function(error, authData) {
         if (error === null) {
           $rootScope.user = authData;
           ref.child('users').child(authData.uid).child('authData').set(authData);
@@ -36,22 +36,22 @@
       );
     };
     
-    function _isLoggedIn(){
+    function _isLoggedIn() {
       return !!ref.getAuth();
     }
 
-    acctFactory.logout = function(cb){
-      ref.unauth(function(){
+    acctFactory.logout = function(cb) {
+      ref.unauth(function() {
         $rootScope.user = null;
         cb();
       });
     };
 
-    acctFactory.register = function(email, pswd, cb){
+    acctFactory.register = function(email, pswd, cb) {
       ref.createUser({
         email : email,
         password : pswd
-      }, function (error) {
+        }, function (error) {
         if (error === null) {
           cb();
         } else {
@@ -61,7 +61,7 @@
       );
     };
 
-    acctFactory.resetPassword = function(email){
+    acctFactory.resetPassword = function(email) {
       ref.resetPassword({
         email : email
       }, function(error) {
@@ -74,11 +74,11 @@
       );
     };
     
-    function _hasTempPassword(){
+    function _hasTempPassword() {
       return ref.getAuth().password.isTemporaryPassword;
     }
 
-    acctFactory.changePassword = function(oldPswd, newPswd, cb){
+    acctFactory.changePassword = function(oldPswd, newPswd, cb) {
       ref.changePassword({
         email : ref.getAuth().password.email,
         oldPassword : oldPswd,
@@ -94,5 +94,6 @@
       );
     };
     return acctFactory;
+
   }) //close factory
 }());

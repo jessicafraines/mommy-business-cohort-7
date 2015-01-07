@@ -131,6 +131,13 @@
   font-size: 30px;
   margin-top: 40px;
 }
+h4.cap {
+  text-transform: capitalize;
+}
+
+td.cap {
+  text-transform: capitalize;
+}
 
 div.child{
   background-color: #f6f6f6;
@@ -192,25 +199,6 @@ img.childImg {
 }
 
 
-/*modal styling*/
-
-.modal-body{
-  background-color: #f6f6f6;
-}
-
-.modal-header{
-  background-color: lightgrey;
-  color: #f6f6f6;
-  text-align: center;
-}
-
-.modal-header .close{
-  color: #f6f6f6;
-}
-
-.table-bordered{
-  margin: 0;
-}
 
 /*background images/colors*/
 
@@ -309,6 +297,28 @@ thead {
   color: white;
   height: 20px;
 }
+
+.table-bordered{
+  margin: 0;
+}
+
+
+/*modal styling*/
+
+.modal-body{
+  background-color: #f6f6f6;
+}
+
+.modal-header{
+  background-color: lightgrey;
+  color: #f6f6f6;
+  text-align: center;
+}
+
+.modal-header{
+  color: #f6f6f6;
+}
+
 
 /* login /register */
 img.login {
