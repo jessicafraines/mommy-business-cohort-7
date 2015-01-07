@@ -54,40 +54,40 @@
 #green {
     border: 5px solid #A8D8C0;
     float: left;
-    width: 163px !important;
+    width: 15vw;
 }
 
 #blue {
     border: 5px solid #8BC0CE;
     float: left;
-    width: 163px !important;
+    width: 14vw;
 }
 
 #pink {
     border: 5px solid #F8B3B6;
     float: left;
-    width: 163px !important;
+    width: 14vw;
 }
 
 #orange {
     border: 5px solid #FFC48C;
     float: left;
-    width: 163px !important;
+    width: 14vw;
 }
 #yellow {
     border: 5px solid #FBFCD0;
     float: left;
-    width: 163px !important;
+    width: 14vw;
 }
 #purple {
     border: 5px solid #EFE3F3;
     float: left;
-    width: 163px !important;
+    width: 14vw;
 }
 #lime {
     border: 5px solid #C4D96B;
     float: left;
-    width: 163px !important;
+    width: 15vw;
 }
 
 /*buttons*/
