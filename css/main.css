@@ -229,9 +229,6 @@ div[ng-view] {
 }
 
 .body {
-  background-image: url('/img/baby-feet.jpg');
-  background-size: cover;
-  color: #D26EB0;
   padding-top: 100px;
 }
 

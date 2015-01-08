@@ -24,6 +24,27 @@
       private: true
     })
 
+    .when('/children/:childId/meds', {
+      templateUrl: 'views/med.html',
+      controller: 'ShowController',
+      controllerAs: 'show',
+      private: true
+    })
+
+    .when('/children/:childId/meds/new', {
+      templateUrl: 'views/addmed.html',
+      controller: 'ShowController',
+      controllerAs: 'show',
+      private: true
+    })
+
+    .when('/children/:childId/meds/:medId/edit', {
+      templateUrl: 'views/addmed.html',
+      controller: 'EditController',
+      controllerAs: 'show',
+      private: true
+    })
+
     .when('/children/:childId/milestones', {
       templateUrl: 'views/child.html',
       controller: 'ShowController',

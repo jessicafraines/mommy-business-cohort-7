@@ -46,9 +46,14 @@
     .controller('EditController', function($location, $scope, $routeParams, childFactory) {
       var vm      = this,
           id      = $routeParams.childId,
+      medId       = $routeParams.medId,
       apptId      = $routeParams.apptId,
       growthId    = $routeParams.growthId,
       milestoneId = $routeParams.milestoneId;
+
+      childFactory.getMed(id, medId, function(data) {
+        vm.newMed = data;
+      });
 
       childFactory.getMilestone(id, milestoneId, function(data) {
         vm.newMilestone = data;
@@ -61,6 +66,13 @@
       childFactory.getGrowth(id, growthId, function(data) {
         vm.newGrowth = data;
       });
+
+      vm.addMed = function() {
+        childFactory.editMed(id, medId, vm.newMed)
+        .success(function(data) {
+          $location.path('/children/' + id);
+        });
+      };
 
       vm.addMilestone = function() {
         childFactory.editMilestone(id, milestoneId, vm.newMilestone)
@@ -84,11 +96,8 @@
       };
 
       vm.cancelForm = function() {
-        debugger;
         $location.path('/children/' + id);
-        debugger;
       };
-        debugger;
     }) //closes edit controller
 
     .controller('ShowController', function($routeParams, $scope, $location,  childFactory) {
@@ -100,6 +109,10 @@
 
       childFactory.getChild(id, function(data) {
         vm.child = vm.calcAge(data);
+      });
+
+      childFactory.getMeds(id, function(data) {
+        vm.meds = data;
       });
 
       childFactory.getMilestones(id, function(data) {
@@ -123,6 +136,14 @@
         });
       }
 
+      vm.addMed = function() {
+        childFactory.createMed(id, vm.newMed, function(data) {
+          vm.meds = vm.meds || {};
+          vm.meds[data.date] = vm.newMed;
+          $location.path('/children/' + id);
+        });
+      };
+
       vm.addMilestone = function() {
         childFactory.createMilestone(id, vm.newMilestone, function(data) {
           vm.milestones = vm.milestones || {};
@@ -144,6 +165,12 @@
           vm.growths = vm.growths || {};
           vm.growths[data.date] = vm.newGrowth;
           $location.path('/children/' + id);
+        });
+      };
+
+      vm.deleteMed = function(medId) {
+        childFactory.deleteMed(id, medId, function() {
+          delete vm.meds[medId];
         });
       };
 

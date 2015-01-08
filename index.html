@@ -61,7 +61,7 @@
                 </div>
               </form>
               <button data-dismiss="modal" type="button" class="btn btn-primary" ng-click="login.login()">login</button>
-              <div class="link password" ng-class="{disabled: !login.email}" ng-click="login.forgotPassword()">(forgot password)</div>
+              <a class="link password" ng-class="{disabled: !login.email}" ng-click="login.forgotPassword()" data-toggle="modal" data-target="med">(forgot password)</a>
             </div>  
           </div>
         </div>

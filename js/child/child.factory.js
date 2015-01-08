@@ -11,6 +11,14 @@
       }
     }
 
+    function _medsUrl(childId, medId) {
+      if (apptId) {
+        return FIREBASE_URL + '/users/' + $rootScope.user.uid + '/children/' + childId + '/meds/' + medId + '.json?auth=' + $rootScope.user.token;
+      } else {
+        return FIREBASE_URL + '/users/' + $rootScope.user.uid + '/children/' + childId + '/meds/.json?auth=' + $rootScope.user.token;
+      }
+    }
+
     function _apptsUrl(childId, apptId) {
       if (apptId) {
         return FIREBASE_URL + '/users/' + $rootScope.user.uid + '/children/' + childId + '/appts/' + apptId + '.json?auth=' + $rootScope.user.token;
@@ -39,13 +47,23 @@
       return $http.post(_childUrl(), child);
     }
 
+    function createMed(childId, med, cb) {
+      $http.post(_medsUrl(childId), med)
+      .success(function(data) {
+        cb(data);
+      })
+      .error(function(err) {
+        alert(err);
+      });
+    }
+
     function createMilestone(childId, milestone, cb) {
       $http.post(_milestonesUrl(childId), milestone)
       .success(function(data) {
         cb(data);
       })
       .error(function(err) {
-        alert('Milestone not added');
+        alert(err);
       });
     }
 
@@ -76,7 +94,17 @@
         cb(data);
       })
       .error(function(err) {
-        alert('Cant find that child');
+        alert(err);
+      });
+    }
+
+    function getMed(childId, medId, cb) {
+      $http.get(_medsUrl(childId, medId))
+      .success(function(data) {
+        cb(data);
+      })
+      .error(function(err) {
+        alert(err);
       });
     }
 
@@ -116,7 +144,17 @@
         cb(data);
       })
       .error(function(err) {
-        alert('Where are those darn kids');
+        alert(err);
+      });
+    }
+
+    function getMeds(cb) { 
+      $http.get(_medsUrl())
+      .success(function(data) {
+        cb(data);
+      })
+      .error(function(err) {
+        alert(err);
       });
     }
 
@@ -145,8 +183,12 @@
         cb(data);
       })
       .error(function(err) {
-        alert('Cant retrieve the growths');
+        alert(err);
       });
+    }
+
+    function editMed(childId, medId, med) {
+      return $http.put(_medsUrl(childId, medId), med);
     }
 
     function editMilestone(childId, milestoneId, milestone) {
@@ -167,18 +209,27 @@
         cb();
       })
       .error(function(err) {
-        alert('delete child broke');
+        alert(err);
+      });
+    }
+
+    function deleteMed(childId, medId, cb) {
+      $http.delete(_medsUrl(childId, medId))
+      .success(function() {
+        cb();
+      })
+      .error(function(err) {
+        alert(err);
       });
     }
 
     function deleteMilestone(childId, milestoneId, cb) {
-      console.log('Milestone');
       $http.delete(_milestonesUrl(childId, milestoneId))
       .success(function() {
         cb();
       })
       .error(function(err) {
-        alert('Delete growth broke');
+        alert(err);
       });
     }
 
@@ -208,21 +259,26 @@
 
     return {
       createChild: createChild,
+      createMed: createMed,
       createMilestone: createMilestone,
       createAppt: createAppt,
       createGrowth: createGrowth,
       getChild: getChild,
+      getMed: getMed,
       getMilestone: getMilestone,
       getAppt: getAppt,
       getGrowth: getGrowth,
       getChildren: getChildren,
+      getMeds: getMeds,
       getMilestones: getMilestones,
       getAppts: getAppts,
       getGrowths: getGrowths,
+      editMed: editMed,
       editMilestone: editMilestone,
       editAppt: editAppt,
       editGrowth: editGrowth,
       deleteKid: deleteKid,
+      deleteMed: deleteMed,
       deleteMilestone: deleteMilestone,
       deleteAppt: deleteAppt,
       deleteGrowth: deleteGrowth,
