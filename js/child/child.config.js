@@ -24,6 +24,48 @@
       private: true
     })
 
+    .when('/children/:childId/vacs', {
+      templateUrl: 'views/vac.html',
+      controller: 'ShowController',
+      controllerAs: 'show',
+      private: true
+    })
+
+    .when('/children/:childId/vacs/new', {
+      templateUrl: 'views/addvac.html',
+      controller: 'ShowController',
+      controllerAs: 'show',
+      private: true
+    })
+
+    .when('/children/:childId/vacs/:vacId/edit', {
+      templateUrl: 'views/addvac.html',
+      controller: 'EditController',
+      controllerAs: 'show',
+      private: true
+    })
+
+    .when('/children/:childId/drs', {
+      templateUrl: 'views/dr.html',
+      controller: 'ShowController',
+      controllerAs: 'show',
+      private: true
+    })
+
+    .when('/children/:childId/drs/new', {
+      templateUrl: 'views/adddr.html',
+      controller: 'ShowController',
+      controllerAs: 'show',
+      private: true
+    })
+
+    .when('/children/:childId/drs/:drId/edit', {
+      templateUrl: 'views/adddr.html',
+      controller: 'EditController',
+      controllerAs: 'show',
+      private: true
+    })
+
     .when('/children/:childId/meds', {
       templateUrl: 'views/med.html',
       controller: 'ShowController',

@@ -47,10 +47,20 @@
     .controller('EditController', function($location, $scope, $routeParams, childFactory) {
       var vm      = this,
           id      = $routeParams.childId,
+      vacId       = $routeParams.vacId,
+      drId        = $routeParams.drId,
       medId       = $routeParams.medId,
       apptId      = $routeParams.apptId,
       growthId    = $routeParams.growthId,
       milestoneId = $routeParams.milestoneId;
+
+      childFactory.getVac(id, vacId, function(data) {
+        vm.newVac = data;
+      });
+
+      childFactory.getDr(id, drId, function(data) {
+        vm.newDr = data;
+      });
 
       childFactory.getMed(id, medId, function(data) {
         vm.newMed = data;
@@ -67,6 +77,20 @@
       childFactory.getGrowth(id, growthId, function(data) {
         vm.newGrowth = data;
       });
+
+      vm.addVac = function() {
+        childFactory.editVac(id, vacId, vm.newVac)
+        .success(function(data) {
+          $location.path('/children/' + id);
+        });
+      };
+
+      vm.addDr = function() {
+        childFactory.editDr(id, drId, vm.newDr)
+        .success(function(data) {
+          $location.path('/children/' + id);
+        });
+      };
 
       vm.addMed = function() {
         childFactory.editMed(id, medId, vm.newMed)
@@ -109,7 +133,15 @@
       vm.photo = "";
 
       childFactory.getChild(id, function(data) {
-        vm.child = vm.calcAge(data);
+        vm.child = vm.calcCurrentAge(data);
+      });
+
+      childFactory.getVacs(id, function(data) {
+        vm.vacs = data;
+      });
+
+      childFactory.getDrs(id, function(data) {
+        vm.drs = data;
       });
 
       childFactory.getMeds(id, function(data) {
@@ -136,6 +168,22 @@
           $location.path('/children/' + id);
         });
       }
+
+      vm.addVac = function() {
+        childFactory.createVac(id, vm.newVac, function(data) {
+          vm.vacs = vm.vacs || {};
+          vm.vacs[data.name] = vm.newVac;
+          $location.path('/children/' + id);
+        });
+      };
+
+      vm.addDr = function() {
+        childFactory.createDr(id, vm.newDr, function(data) {
+          vm.drs = vm.drs || {};
+          vm.drs[data.name] = vm.newDr;
+          $location.path('/children/' + id);
+        });
+      };
 
       vm.addMed = function() {
         childFactory.createMed(id, vm.newMed, function(data) {
@@ -169,6 +217,18 @@
         });
       };
 
+      vm.deleteVac = function(vacId) {
+        childFactory.deleteVac(id, vacId, function() {
+          delete vm.vacs[vacId];
+        });
+      };
+
+      vm.deleteDr = function(drId) {
+        childFactory.deleteDr(id, drId, function() {
+          delete vm.drs[drId];
+        });
+      };
+
       vm.deleteMed = function(medId) {
         childFactory.deleteMed(id, medId, function() {
           delete vm.meds[medId];
@@ -197,7 +257,7 @@
         $location.path('/children/' + id);
       };
 
-      vm.calcAge = function(child) {
+      vm.calcCurrentAge = function(child) {
         var dob = moment(child.dob);
         var now = moment();
           child.age = {

@@ -12,8 +12,8 @@
         <h5 class="childInfo">born at: {{show.child.tob | date:"shortTime"}}</h5>
         <h5 class="childInfo">length was: {{show.child.lab}}</h5>
         <h5 class="childInfo">weight was: {{show.child.pab}}lbs{{show.child.oab}}oz</h5>
-        <h5 class="childInfo" ng-hide="show.child.age.years < 1">today {{show.child.name}} is {{show.child.age.years}} year(s) old</h5>
-        <h5 class="childInfo" ng-hide="show.child.age.years >= 1">today {{show.child.name}} is {{show.child.age.months}} month(s) old</h5>
+        <h5 class="childInfo" ng-hide="show.child.age.years < 2">today {{show.child.name}} is {{show.child.age.years}} year(s) old</h5>
+        <h5 class="childInfo" ng-hide="show.child.age.years >= 2">today {{show.child.name}} is {{show.child.age.months}} month(s) old</h5>
       </div>
       <div class="col-xs-1"></div>
     </div> 
@@ -96,7 +96,7 @@
         <h4 class="chart-title">Dr Appointments</h4>
         <button ng-show="doctor" class="chart-btn" ng-click="doctor = !doctor">view appointment chart</button> 
         <button ng-hide="doctor" class="chart-close-btn" ng-click="doctor = !doctor">&#10006;</button> 
-        <img ng-show="doctor" ng-src="https://thebloodsugarwhisperer.files.wordpress.com/2014/06/occupations_doctor.gif" style="height:200px;">
+        <img ng-show="doctor" ng-src="http://www.diabetesmine.com/wp-content/uploads/2013/02/Doc-Appt-Calendar.jpg" style="height:200px;">
         <span ng-hide="doctor">
         <table class="table table-bordered">
           <thead>
@@ -156,6 +156,75 @@
         </table>
         <div>
           <a class="btn btn-primary" href="/#/children/{{show.childId}}/meds/new">add medicine</a>
+        </div>
+      </span>
+      </div>
+      <div class="col-xs-1"></div>
+    </div>  
+    <div class="row">
+      <div class="col-xs-1"></div>
+      <div class="col-xs-5 charts" ng-init="doctorInfo = true">
+      <h4 class="chart-title">Doctor Info</h4>
+        <button ng-show="doctorInfo" class="chart-btn" ng-click="doctorInfo = !doctorInfo">view doctor information</button> 
+        <button ng-hide="doctorInfo" class="chart-close-btn" ng-click="doctorInfo = !doctorInfo">&#10006;</button> 
+        <img ng-show="doctorInfo" ng-src="https://thebloodsugarwhisperer.files.wordpress.com/2014/06/occupations_doctor.gif" style="height:200px;">
+        <span ng-hide="doctorInfo">
+        <table class="table table-bordered">
+          <thead>
+            <th></th>
+            <th>name</th>
+            <th>address</th>
+            <th>phone</th>
+            <th>type of doctor</th>
+            <th></th>
+          </thead>
+          <tr ng-repeat="(drId, dr) in show.drs">
+            <td>
+              <div ng-click="show.deleteDr(drId)"><span class="glyphicon glyphicon-trash"></span></div>
+            </td>
+            <td>{{dr.name}}</td>
+            <td>{{dr.address}}</td>
+            <td>{{dr.phone}}</td>
+            <td>{{dr.type}}</td>
+            <td>
+              <a class="btn btn-primary" href="/#/children/{{show.childId}}/drs/{{drId}}/edit">edit</a>
+            </td>
+          </tr>
+        </table>
+        <div>
+          <a class="btn btn-primary" href="/#/children/{{show.childId}}/drs/new">add doctor</a>
+        </div>
+      </span>
+      </div>
+      <div class="col-xs-1"></div>
+      <div class="col-xs-5 charts" ng-init="vac = true">
+      <h4 class="chart-title">Vaccination Records</h4>
+        <button ng-show="vac" class="chart-btn" ng-click="vac = !vac">view vaccination records</button> 
+        <button ng-hide="vac" class="chart-close-btn" ng-click="vac = !vac">&#10006;</button> 
+        <img ng-show="vac" ng-src="http://mayaclinic.in/patient-education/wp-content/uploads/2013/07/Vaccination-cartoon.jpg" style="height:200px;">
+        <span ng-hide="vac">
+        <table class="table table-bordered">
+          <thead>
+            <th></th>
+            <th>vaccination</th>
+            <th>date received</th>
+            <th>reactions</th>
+            <th></th>
+          </thead>
+          <tr ng-repeat="(vacId, vac) in show.vacs">
+            <td>
+              <div ng-click="show.deleteVac(vacId)"><span class="glyphicon glyphicon-trash"></span></div>
+            </td>
+            <td>{{vac.name}}</td>
+            <td>{{vac.date | date:"MMM dd, yyyy"}}</td>
+            <td>{{vac.reaction}}</td>
+            <td>
+              <a class="btn btn-primary" href="/#/children/{{show.childId}}/vacs/{{vacId}}/edit">edit</a>
+            </td>
+          </tr>
+        </table>
+        <div>
+          <a class="btn btn-primary" href="/#/children/{{show.childId}}/vacs/new">add vaccination</a>
         </div>
       </span>
       </div>

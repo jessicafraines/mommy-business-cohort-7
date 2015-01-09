@@ -11,6 +11,22 @@
       }
     }
 
+    function _vacsUrl(childId, vacId) {
+      if (vacId) {
+        return FIREBASE_URL + '/users/' + $rootScope.user.uid + '/children/' + childId + '/vacs/' + vacId + '.json?auth=' + $rootScope.user.token;
+      } else {
+        return FIREBASE_URL + '/users/' + $rootScope.user.uid + '/children/' + childId + '/vacs/.json?auth=' + $rootScope.user.token;
+      }
+    }
+
+    function _drsUrl(childId, drId) {
+      if (drId) {
+        return FIREBASE_URL + '/users/' + $rootScope.user.uid + '/children/' + childId + '/drs/' + drId + '.json?auth=' + $rootScope.user.token;
+      } else {
+        return FIREBASE_URL + '/users/' + $rootScope.user.uid + '/children/' + childId + '/drs/.json?auth=' + $rootScope.user.token;
+      }
+    }
+
     function _medsUrl(childId, medId) {
       if (medId) {
         return FIREBASE_URL + '/users/' + $rootScope.user.uid + '/children/' + childId + '/meds/' + medId + '.json?auth=' + $rootScope.user.token;
@@ -45,6 +61,26 @@
 
     function createChild(child, cb) {
       return $http.post(_childUrl(), child);
+    }
+
+    function createVac(childId, vac, cb) {
+      $http.post(_vacsUrl(childId), vac)
+      .success(function(data) {
+        cb(data);
+      })
+      .error(function(err) {
+        alert(err);
+      });
+    }
+
+    function createDr(childId, dr, cb) {
+      $http.post(_drsUrl(childId), dr)
+      .success(function(data) {
+        cb(data);
+      })
+      .error(function(err) {
+        alert(err);
+      });
     }
 
     function createMed(childId, med, cb) {
@@ -90,6 +126,26 @@
 
     function getChild(id, cb) {
       $http.get(_childUrl(id))
+      .success(function(data) {
+        cb(data);
+      })
+      .error(function(err) {
+        alert(err);
+      });
+    }
+
+    function getVac(childId, vacId, cb) {
+      $http.get(_vacsUrl(childId, vacId))
+      .success(function(data) {
+        cb(data);
+      })
+      .error(function(err) {
+        alert(err);
+      });
+    }
+
+    function getDr(childId, drId, cb) {
+      $http.get(_drsUrl(childId, drId))
       .success(function(data) {
         cb(data);
       })
@@ -148,6 +204,26 @@
       });
     }
 
+    function getVacs(childId, cb) { 
+      $http.get(_vacsUrl(childId))
+      .success(function(data) {
+        cb(data);
+      })
+      .error(function(err) {
+        alert(err);
+      });
+    }
+
+    function getDrs(childId, cb) { 
+      $http.get(_drsUrl(childId))
+      .success(function(data) {
+        cb(data);
+      })
+      .error(function(err) {
+        alert(err);
+      });
+    }
+
     function getMeds(childId, cb) { 
       $http.get(_medsUrl(childId))
       .success(function(data) {
@@ -187,6 +263,14 @@
       });
     }
 
+    function editVac(childId, vacId, vac) {
+      return $http.put(_vacsUrl(childId, vacId), vac);
+    }
+
+    function editDr(childId, drId, dr) {
+      return $http.put(_drsUrl(childId, drId), dr);
+    }
+
     function editMed(childId, medId, med) {
       return $http.put(_medsUrl(childId, medId), med);
     }
@@ -206,6 +290,26 @@
     function deleteKid(id, cb) {
       $http.delete(_childUrl(id))
       .success(function(){
+        cb();
+      })
+      .error(function(err) {
+        alert(err);
+      });
+    }
+
+    function deleteVac(childId, vacId, cb) {
+      $http.delete(_vacsUrl(childId, vacId))
+      .success(function() {
+        cb();
+      })
+      .error(function(err) {
+        alert(err);
+      });
+    }
+
+    function deleteDr(childId, drId, cb) {
+      $http.delete(_drsUrl(childId, drId))
+      .success(function() {
         cb();
       })
       .error(function(err) {
@@ -259,25 +363,35 @@
 
     return {
       createChild: createChild,
+      createVac: createVac,
+      createDr: createDr,
       createMed: createMed,
       createMilestone: createMilestone,
       createAppt: createAppt,
       createGrowth: createGrowth,
       getChild: getChild,
+      getVac: getVac,
+      getDr: getDr,
       getMed: getMed,
       getMilestone: getMilestone,
       getAppt: getAppt,
       getGrowth: getGrowth,
       getChildren: getChildren,
+      getVacs: getVacs,
+      getDrs: getDrs,
       getMeds: getMeds,
       getMilestones: getMilestones,
       getAppts: getAppts,
       getGrowths: getGrowths,
+      editVac: editVac,
+      editDr: editDr,
       editMed: editMed,
       editMilestone: editMilestone,
       editAppt: editAppt,
       editGrowth: editGrowth,
       deleteKid: deleteKid,
+      deleteVac: deleteVac,
+      deleteDr: deleteDr,
       deleteMed: deleteMed,
       deleteMilestone: deleteMilestone,
       deleteAppt: deleteAppt,
