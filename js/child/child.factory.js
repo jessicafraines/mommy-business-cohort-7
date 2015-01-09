@@ -12,7 +12,7 @@
     }
 
     function _medsUrl(childId, medId) {
-      if (apptId) {
+      if (medId) {
         return FIREBASE_URL + '/users/' + $rootScope.user.uid + '/children/' + childId + '/meds/' + medId + '.json?auth=' + $rootScope.user.token;
       } else {
         return FIREBASE_URL + '/users/' + $rootScope.user.uid + '/children/' + childId + '/meds/.json?auth=' + $rootScope.user.token;
@@ -73,7 +73,7 @@
         cb(data);
       })
       .error(function(err) {
-        alert('Appt not added');
+        alert(err);
       });
     }
 
@@ -114,7 +114,7 @@
         cb(data);
       })
       .error(function(err) {
-        alert('Get milestone broke');
+        alert(err);
       });
     }
 
@@ -124,7 +124,7 @@
         cb(data);
       })
       .error(function(err) {
-        alert('Get item broke');
+        alert(err);
       });
     }
 
@@ -134,7 +134,7 @@
         cb(data);
       })
       .error(function(err) {
-        alert('Get growth broke');
+        alert(err);
       });
     }
 
@@ -148,8 +148,8 @@
       });
     }
 
-    function getMeds(cb) { 
-      $http.get(_medsUrl())
+    function getMeds(childId, cb) { 
+      $http.get(_medsUrl(childId))
       .success(function(data) {
         cb(data);
       })
@@ -164,7 +164,7 @@
         cb(data);
       })
       .error(function(err) {
-        alert('Cant retrieve the milestones');
+        alert(err);
       });
     }
 
@@ -174,7 +174,7 @@
         cb(data);
       })
       .error(function(err) {
-        alert('Cant retrieve the appts');
+        alert(err);
       });
     }
     function getGrowths(childId, cb) {
@@ -239,7 +239,7 @@
         cb();
       })
       .error(function(err) {
-        alert('Delete broke');
+        alert(err);
       });
     }
 
@@ -249,7 +249,7 @@
         cb();
       })
       .error(function(err) {
-        alert('Delete growth broke');
+        alert(err);
       });
     }
 

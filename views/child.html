@@ -109,11 +109,39 @@
           <a class="btn btn-primary" href="/#/children/{{show.childId}}/appointments/new">add appointment</a>
         </div>
       </div>
-    <div class="col-xs-2"></div>
-    <div class="col-xs-4">
-    <h1>medicine table going here</h2>
-    </div>
-  </div>  
+      <div class="col-xs-5">
+        <h4>Medicine Tracker</h4>
+        <table class="table table-bordered">
+          <thead>
+            <th></th>
+            <th>date</th>
+            <th>name</th>
+            <th>dosage</th>
+            <th>symptoms</th>
+            <th>notes</th>
+            <th></th>
+          </thead>
+          <tr ng-repeat="(medId, med) in show.meds">
+            <td>
+              <div ng-click="show.deleteMed(medId)"><span class="glyphicon glyphicon-trash"></span></div>
+            </td>
+            <td>{{med.date | date:"MMM dd, yyyy"}}</td>
+            <td>{{med.name}}</td>
+            <td>{{med.dosage}}</td>
+            <td>{{med.reason}}</td>
+            <td>{{med.note}}</td>
+            <td>
+              <a class="btn btn-primary" href="/#/children/{{show.childId}}/meds/{{medId}}/edit">edit</a>
+            </td>
+          </tr>
+        </table>
+        <div>
+          <a class="btn btn-primary" href="/#/children/{{show.childId}}/meds/new">add medicine</a>
+        </div>
+      </div>
+      <div class="col-xs-1"></div>
+    </div>  
+  </div>
 </div>
 
     <!--Photo Modal-->

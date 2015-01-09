@@ -3,7 +3,7 @@
   angular.module('mommyApp')
   .config(function($routeProvider){
     $routeProvider
-    .when('/login', {
+   /* .when('/login', {
       templateUrl: 'views/login.html',
       controller: 'LoginController',
       controllerAs: 'login',
