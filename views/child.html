@@ -26,8 +26,12 @@
     </div>
     <div class="row">
       <div class="col-xs-1"></div>
-      <div class="col-xs-5">
-        <h4>Growth Chart</h4>
+      <div class="col-xs-5 charts" ng-init="grow = true">
+        <h4 class="chart-title">Growth Chart</h4>
+        <button ng-show="grow" class="chart-btn" ng-click="grow = !grow">view growth chart</button> 
+        <button ng-hide="grow" class="chart-close-btn" ng-click="grow = !grow">&#10006;</button> 
+        <img ng-show="grow" ng-src="http://joannagoldman.com/wp-content/uploads/2012/12/Carrie.jpg" style="height:200px;">
+        <span ng-hide="grow">
         <table class="table table-bordered">
           <thead>
             <th></th>
@@ -52,10 +56,15 @@
         </table>
         <div>
           <a class="btn btn-primary" href="/#/children/{{show.childId}}/growths/new">add growth</a>
+        </span>
         </div>
       </div>
-      <div class="col-xs-5">
-        <h4>Milestone Chart</h4>
+      <div class="col-xs-5 charts" ng-init="mile = true">
+        <h4 class="chart-title">Milestone Chart</h4>
+        <button ng-show="mile" class="chart-btn" ng-click="mile = !mile">view milestone chart</button> 
+        <button ng-hide="mile" class="chart-close-btn" ng-click="mile = !mile">&#10006;</button> 
+        <img ng-show="mile" ng-src="http://cdn2.momjunction.com/wp-content/uploads/2014/05/mile-stone.jpg" style="height:200px;">
+        <span ng-hide="mile">
         <table class="table table-bordered">
           <thead>
             <th></th>
@@ -77,13 +86,18 @@
         <div>
           <a class="btn btn-primary" href="/#/children/{{show.childId}}/milestones/new">add milestone</a>
         </div>
+      </span>
       </div>
       <div class="col-xs-1"></div>
     </div>
     <div class="row">
       <div class="col-xs-1"></div>
-      <div class="col-xs-5">
-        <h4>Dr Appointments</h4>
+      <div class="col-xs-5 charts" ng-init="doctor = true">
+        <h4 class="chart-title">Dr Appointments</h4>
+        <button ng-show="doctor" class="chart-btn" ng-click="doctor = !doctor">view appointment chart</button> 
+        <button ng-hide="doctor" class="chart-close-btn" ng-click="doctor = !doctor">&#10006;</button> 
+        <img ng-show="doctor" ng-src="https://thebloodsugarwhisperer.files.wordpress.com/2014/06/occupations_doctor.gif" style="height:200px;">
+        <span ng-hide="doctor">
         <table class="table table-bordered">
           <thead>
             <th></th>
@@ -108,9 +122,14 @@
         <div>
           <a class="btn btn-primary" href="/#/children/{{show.childId}}/appointments/new">add appointment</a>
         </div>
+      </span>
       </div>
-      <div class="col-xs-5">
-        <h4>Medicine Tracker</h4>
+      <div class="col-xs-5 charts" ng-init="medicine = true">
+      <h4 class="chart-title">Medicine Tracker</h4>
+        <button ng-show="medicine" class="chart-btn" ng-click="medicine = !medicine">view medicine chart</button> 
+        <button ng-hide="medicine" class="chart-close-btn" ng-click="medicine = !medicine">&#10006;</button> 
+        <img ng-show="medicine" ng-src="http://canigivemybaby.com/wp-content/uploads/2012/11/Can-I-give-my-baby-cough-syrup.jpg" style="height:200px;">
+        <span ng-hide="medicine">
         <table class="table table-bordered">
           <thead>
             <th></th>
@@ -138,6 +157,7 @@
         <div>
           <a class="btn btn-primary" href="/#/children/{{show.childId}}/meds/new">add medicine</a>
         </div>
+      </span>
       </div>
       <div class="col-xs-1"></div>
     </div>  

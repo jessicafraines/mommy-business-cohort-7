@@ -285,6 +285,36 @@ p{
 
 /* tables */
 
+.charts{
+  border: 1px solid black;
+  margin: 10px;
+}
+
+h4.chart-title{
+  text-align:center; 
+  font-family: 'Purple Purse', cursive; font-size:10px;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+button.chart-btn{
+  background-color: #4C3535 !important;
+  border-radius: 10px;
+  font-family: 'Antic Didone', serif;
+  height: 40px;
+  color: white;
+  margin-right: 30px;
+}
+
+button.chart-close-btn{
+  background-color: #4C3535 !important;
+  color: white;
+  font-family: 'Antic Didone', serif;
+  height: 40px;
+  width: 40px;
+  margin-bottom: 5px;
+}
+
 table{
   background-color: #f6f6f6;
 }
