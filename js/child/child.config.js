@@ -3,12 +3,12 @@
   angular.module('mommyApp')
   .config(function($routeProvider){
     $routeProvider
-    .when('/new', {
+   /* .when('/new', {
       templateUrl: 'views/addchild.html',
       controller: 'ChildController',
       controllerAs: 'child',
       private: true
-    })
+    })*/
 
     .when('/children', {
       templateUrl: 'views/children.html',

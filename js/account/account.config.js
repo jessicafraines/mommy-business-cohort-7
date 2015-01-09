@@ -13,12 +13,11 @@
         }
       }
     })
-
     .when('/register', {
       templateUrl: 'views/register.html',
       controller: 'LoginController',
       controllerAs: 'login'
-    })
+    })*/
 
     .when('/changePassword', {
       templateUrl: 'views/changepassword.html',

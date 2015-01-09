@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('mommyApp')
-    .controller('ChildController', function($routeParams, $location, childFactory){
+    .controller('ChildController', function($routeParams, $route, $location, childFactory){
       var vm = this,
           id = $routeParams.childId;
 
@@ -31,13 +31,14 @@
             vm.children= vm.children || {};
             vm.children[data.name] = vm.newChild;
             $location.path('/children')
-            location.reload();
+            $route.reload();
         });
       };
 
       vm.deleteKid = function(id) {
         childFactory.deleteKid(id, function() { 
             delete vm.children[id];
+            $route.reload();
         });
       };
 
