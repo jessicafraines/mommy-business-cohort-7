@@ -1,8 +1,8 @@
-<div class="row" style="background-image: url(http://th01.deviantart.net/fs71/PRE/f/2010/193/c/d/Shoujo_style_Background_by_alliaxandromeda.png); background-size: cover; height:100%">
+<div class="row" style="background-image: url(http://th01.deviantart.net/fs71/PRE/f/2010/193/c/d/Shoujo_style_Background_by_alliaxandromeda.png); background-size: cover; height: 100%; overflow:auto; background-attachment:scroll;">
   <div class="col-xs-12">
     <h4 class="my-children">My Children</h4>
   <div>
-    <button style="margin-top:40px; margin-left:40px; z-index:1; border-radius:10px;" type="button" class="btn btn-default child-btn" data-toggle="modal" data-target="#addChildModal"><span class="glyphicon glyphicon-plus glyph"></span></button>
+    <div style="margin-top:40px; margin-left:40px; z-index:1; border-radius:10px;" type="button" class="btn btn-default child-btn" data-toggle="modal" data-target="#addChildModal"><span class="glyphicon glyphicon-plus glyph"></span></div>
   </div>
   <div class="child" ng-repeat="(childId, kid) in child.children">
     <img ng-hide="kid.photo" src="/img/baby.jpg">
@@ -12,7 +12,7 @@
     <h4><span ng-hide="kid.age.years < 1">{{kid.age.years}} year(s)old</span><span ng-hide="kid.age.years >= 1">{{kid.age.months}} month(s)old</span></h4>
     <a class="btn btn-primary look-btn" href="/#/children/{{childId}}">edit</a>
     <div>
-      <button ng-click="child.deleteKid(childId)">x</button>
+      <div ng-click="child.deleteKid(childId)"><span style="padding-top:10px;" class="glyphicon glyphicon-trash"></span></div>
     </div>
   </div>
   <div class="child" ng-hide="child.children">

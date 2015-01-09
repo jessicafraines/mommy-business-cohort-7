@@ -144,7 +144,7 @@ div.child{
   font-family: 'Purple Purse', cursive;
   font-size: 16px;
   width: 210px;
-  height: 260px;
+  height: 300px;
   margin: 20px;
   padding-top: 20px;
   border-radius: 60px;
@@ -267,7 +267,7 @@ div[ng-view] {
    color: #f8f8f8;
 }
 .shroud {
-  height: 50%;
+  height: 30%;
   width: 100%;
   padding-top: 60px;
   background-color: rgba(0, 0, 0, 0.4);
@@ -287,6 +287,10 @@ p{
 
 table{
   background-color: #f6f6f6;
+}
+
+tr {
+  height: 50px;
 }
 
 thead {
