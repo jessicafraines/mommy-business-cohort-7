@@ -3,12 +3,6 @@
   angular.module('mommyApp')
   .config(function($routeProvider){
     $routeProvider
-   /* .when('/new', {
-      templateUrl: 'views/addchild.html',
-      controller: 'ChildController',
-      controllerAs: 'child',
-      private: true
-    })*/
 
     .when('/children', {
       templateUrl: 'views/children.html',
@@ -135,6 +129,7 @@
       controllerAs: 'show',
       private: true
     })
+
     .when('/children/:childId/appointments/new', {
       templateUrl: 'views/addappt.html',
       controller: 'ShowController',
@@ -148,6 +143,7 @@
       controllerAs: 'show',
       private: true
     })
+
     .otherwise({redirectTo: '/'});
   })
 

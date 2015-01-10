@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('mommyApp')
-    .controller('ChildController', function($routeParams, $route, $location, childFactory){
+    .controller('ChildController', function($routeParams, $route, $location, childFactory) {
       var vm = this,
           id = $routeParams.childId;
 
@@ -19,7 +19,7 @@
           var now = moment();
           children[k].age = {
             years: now.diff(dob, 'years'),
-            months: Math.floor(now.diff(dob, 'months') / 12) + 1
+            months: Math.floor(now.diff(dob, 'months')) + 1
           };
         });
         return children;
@@ -108,16 +108,16 @@
 
       vm.addAppt = function() {
         childFactory.editAppt(id, apptId, vm.newAppt)
-          .success(function(data) {
-            $location.path('/children/' + id);
-          });
+        .success(function(data) {
+          $location.path('/children/' + id);
+        });
       };
 
       vm.addGrowth = function() {
         childFactory.editGrowth(id, growthId, vm.newGrowth)
-          .success(function(data) {
-            $location.path('/children/' + id);
-          });
+        .success(function(data) {
+          $location.path('/children/' + id);
+        });
       };
 
       vm.cancelForm = function() {
@@ -262,7 +262,7 @@
         var now = moment();
           child.age = {
             years: now.diff(dob, 'years'),
-            months: Math.floor(now.diff(dob, 'months') / 12) + 1
+            months: Math.floor(now.diff(dob, 'months')) + 1
           };
         return child;
       };

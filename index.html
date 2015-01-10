@@ -33,6 +33,7 @@
               <li><a data-toggle="modal" data-target="#login" class="login logout" href="">Login</a></li>
             </ul>
             <ul ng-show="user" class="nav navbar-nav navbar-right">
+              <li><a class="home" data-toggle="modal" data-target="#addChildModal">Add Child</a></li>
               <li><a class="children" href="/#/children">Children</a></li>
               <li><a class="logout" href="/#/logout">Logout</a></li>
             </ul>
@@ -63,8 +64,10 @@
                   <input class="form-control" type="password" ng-model="login.password" placeholder="enter password" required>
                 </div>
               </form>
-              <button data-dismiss="modal" type="button" class="btn btn-primary" ng-click="login.login()">login</button>
-              <a class="link password" ng-class="{disabled: !login.email}" ng-click="login.forgotPassword()">(forgot password)</a>
+              <button data-dismiss="modal" type="button" class="btn btn-primary chart-submit-btn" ng-click="login.login()">login</button>
+              <div>
+                <a class="link password" ng-class="{disabled: !login.email}" ng-click="login.forgotPassword()">(forgot password)</a>
+              </div>
             </div>  
           </div>
         </div>

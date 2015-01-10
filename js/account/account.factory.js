@@ -4,6 +4,7 @@
   .factory('accountFactory', function($rootScope, $location, FIREBASE_URL) {
     var acctFactory = {},
         ref = new Firebase(FIREBASE_URL);
+
     $rootScope.user = ref.getAuth();
 
     acctFactory.requireLogin = function() {
@@ -82,7 +83,7 @@
       ref.changePassword({
         email : ref.getAuth().password.email,
         oldPassword : oldPswd,
-        newPassword : newPswd
+        newPassword : newPswd,
       }, function(error) {
         if(error === null) {
           alert('Password was changed successfully');

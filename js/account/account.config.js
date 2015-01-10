@@ -3,21 +3,6 @@
   angular.module('mommyApp')
   .config(function($routeProvider){
     $routeProvider
-   /* .when('/login', {
-      templateUrl: 'views/login.html',
-      controller: 'LoginController',
-      controllerAs: 'login',
-      resolve: {
-        data: function(accountFactory){
-          accountFactory.disallowLogin();
-        }
-      }
-    })
-    .when('/register', {
-      templateUrl: 'views/register.html',
-      controller: 'LoginController',
-      controllerAs: 'login'
-    })*/
 
     .when('/changePassword', {
       templateUrl: 'views/changepassword.html',
@@ -30,6 +15,7 @@
       template: '',
       controller: 'LogoutController'
     })
+
     .otherwise({redirectTo: '/'});
   })
 

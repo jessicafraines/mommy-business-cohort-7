@@ -3,6 +3,7 @@
 
   angular.module('mommyApp')
   .factory('childFactory', function($rootScope, $http, $location, FIREBASE_URL) { 
+    
     function _childUrl(id) {
       if (id) {
         return FIREBASE_URL + '/users/' + $rootScope.user.uid + '/children/' + id + '.json?auth=' + $rootScope.user.token;
