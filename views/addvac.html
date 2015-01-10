@@ -1,0 +1,38 @@
+<div class="row" style="background-image:url(http://media.inktastic.com/thumbnail/300/17/17300.1.png); background-color: rgba(0, 0, 0, 0.4); height:100%;">
+  <div class="col-xs-12" style="background-color:rgba(0, 0, 0, 0.4); height:100%;">
+  <div class="col-xs-5"></div>
+  <div class="col-xs-2">
+    <div class="modal-fade" aria-hidden="true" id="vac" tabindex="-1" role="dialog" aria-labelledby="vacLabel">
+      <div class="modal-dialog" style="width:350px;">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" data-dismiss="modal" class="close" aria-label="close" ng-click="show.cancelForm()"><span class="close" aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body" style="text-align:center;">
+              <h4 class="login-title">mommy business</h4>
+              <img class="login" src="../img/dj.jpg"/>
+              <form name="addVacForm" ng-submit="addVacForm.$valid && show.addVac()" novalidate>
+                <div class="form-group" ng-class="{'has-error': !show.vac.name}">
+                  <label class="control-label">vaccination</label>
+                  <input class="form-control" type="text" ng-model="show.newVac.name" required>
+                </div>
+                <div class="form-group" ng-class="{'has-error': !show.vac.date}">
+                  <label class="control-label">date received</label>
+                  <input class="form-control" type="text" ng-model="show.newVac.date" bs-datepicker>
+                </div>
+                <div class="form-group" ng-class="{'has-error': !show.vac.reaction}">
+                  <label class="control-label">reaction</label>
+                  <input class="form-control" type="text" ng-model="show.newVac.reaction">
+                </div>
+                  <input type="submit" value="submit" ng-disabled="addVacForm.$invalid" data-dismiss="modal">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-5"></div>
+  </div>
+  </div>
+</div>

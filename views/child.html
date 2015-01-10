@@ -1,26 +1,29 @@
-<div class="row" style="background-color:ECE3E3; background-size:cover;height:100%; overflow:auto;">
+<div class="row child-page-background">
   <div class="col-xs-12">
     <div class="row">
-      <div class="col-xs-4">
-        <img class="childImg" src="data:image/png;base64,{{show.child.photo}}" style="width: 150px;">
+      <div class="col-xs-4 polaroid">
+        <p>{{show.child.name}}</p>
+        <img src="data:image/png;base64,{{show.child.photo}}" style="width: 150px;">
       </div>
       <div class="col-xs-2">
       </div>
       <div class="col-xs-5" id="stretch">
-        <h4 class="childInfo cap">{{show.child.name}}'s birth information</h4>
-        <h5 class="childInfo">born on: {{show.child.dob | date:"MM-dd-yyyy"}}</h5>
-        <h5 class="childInfo">born at: {{show.child.tob | date:"shortTime"}}</h5>
-        <h5 class="childInfo">length was: {{show.child.lab}}</h5>
-        <h5 class="childInfo">weight was: {{show.child.pab}}lbs{{show.child.oab}}oz</h5>
-        <h5 class="childInfo" ng-hide="show.child.age.years < 2">today {{show.child.name}} is {{show.child.age.years}} year(s) old</h5>
-        <h5 class="childInfo" ng-hide="show.child.age.years >= 2">today {{show.child.name}} is {{show.child.age.months}} month(s) old</h5>
+        <div class="inside-border">
+          <h4 class="childInfo cap">{{show.child.name}}'s birth information</h4>
+          <h5 class="childInfo">born on: {{show.child.dob | date:"MM-dd-yyyy"}}</h5>
+          <h5 class="childInfo">born at: {{show.child.tob | date:"shortTime"}}</h5>
+          <h5 class="childInfo">length was: {{show.child.lab}}"</h5>
+          <h5 class="childInfo">weight was: {{show.child.pab}}lbs {{show.child.oab}}oz</h5>
+          <h5 class="childInfo" ng-hide="show.child.age.years < 2">today {{show.child.name}} is {{show.child.age.years}} year(s) old</h5>
+          <h5 class="childInfo" ng-hide="show.child.age.years >= 2">today {{show.child.name}} is {{show.child.age.months}} month(s) old</h5>
+        </div> 
       </div>
       <div class="col-xs-1"></div>
     </div> 
     <div class="row">
       <div class="col-xs-6">
-        <button ng-show="show.child.photo" type="button" class="btn btn-primary editPhoto" data-toggle="modal" data-target="#photoModal">Edit Photo</button>
-        <button ng-hide="show.child.photo" type="button" class="btn btn-primary editPhoto" data-toggle="modal" data-target="#photoModal">Add Photo</button>
+        <button ng-show="show.child.photo" type="button" class="btn btn-primary edit-photo-btn" data-toggle="modal" data-target="#photoModal">Edit Photo</button>
+        <button ng-hide="show.child.photo" type="button" class="btn btn-primary edit-photo-btn" data-toggle="modal" data-target="#photoModal">Add Photo</button>
       </div>
       <div class="col-xs-6"></div>
     </div>
@@ -32,7 +35,7 @@
         <button ng-hide="grow" class="chart-close-btn" ng-click="grow = !grow">&#10006;</button> 
         <img ng-show="grow" ng-src="http://joannagoldman.com/wp-content/uploads/2012/12/Carrie.jpg" style="height:200px;">
         <span ng-hide="grow">
-        <table class="table table-bordered">
+        <table class="table table-striped">
           <thead>
             <th></th>
             <th>date</th>
@@ -65,7 +68,7 @@
         <button ng-hide="mile" class="chart-close-btn" ng-click="mile = !mile">&#10006;</button> 
         <img ng-show="mile" ng-src="http://cdn2.momjunction.com/wp-content/uploads/2014/05/mile-stone.jpg" style="height:200px;">
         <span ng-hide="mile">
-        <table class="table table-bordered">
+        <table class="table table-striped">
           <thead>
             <th></th>
             <th>date</th>
@@ -79,12 +82,12 @@
             <td>{{milestone.date | date:"EEE, MMM dd, yyyy"}}</td>
             <td>{{milestone.milestone}}</td>
             <td class="link">
-              <a class="btn btn-primary" href="/#/children/{{show.childId}}/milestones/{{milestoneId}}/edit">edit</a>
+              <a class="btn btn-primary chart-edit-btn" href="/#/children/{{show.childId}}/milestones/{{milestoneId}}/edit">edit</a>
             </td>
           </tr>
         </table>
         <div>
-          <a class="btn btn-primary" href="/#/children/{{show.childId}}/milestones/new">add milestone</a>
+          <a class="btn btn-primary chart-submit-btn" href="/#/children/{{show.childId}}/milestones/new">add milestone</a>
         </div>
       </span>
       </div>
@@ -98,7 +101,7 @@
         <button ng-hide="doctor" class="chart-close-btn" ng-click="doctor = !doctor">&#10006;</button> 
         <img ng-show="doctor" ng-src="http://www.diabetesmine.com/wp-content/uploads/2013/02/Doc-Appt-Calendar.jpg" style="height:200px;">
         <span ng-hide="doctor">
-        <table class="table table-bordered">
+        <table class="table table-striped">
           <thead>
             <th></th>
             <th>date</th>
@@ -115,12 +118,12 @@
             <td>{{appt.time | date: "hh:mm a"}}</td>
             <td class="cap">{{appt.doctor}}</td>
             <td>
-              <a class="btn btn-primary" href="/#/children/{{show.childId}}/appointments/{{apptId}}/edit">edit</a>
+              <a class="btn btn-primary chart-edit-btn" href="/#/children/{{show.childId}}/appointments/{{apptId}}/edit">edit</a>
             </td>
           </tr>
         </table>
         <div>
-          <a class="btn btn-primary" href="/#/children/{{show.childId}}/appointments/new">add appointment</a>
+          <a class="btn btn-primary chart-submit-btn" href="/#/children/{{show.childId}}/appointments/new">add appointment</a>
         </div>
       </span>
       </div>
@@ -130,7 +133,7 @@
         <button ng-hide="medicine" class="chart-close-btn" ng-click="medicine = !medicine">&#10006;</button> 
         <img ng-show="medicine" ng-src="http://canigivemybaby.com/wp-content/uploads/2012/11/Can-I-give-my-baby-cough-syrup.jpg" style="height:200px;">
         <span ng-hide="medicine">
-        <table class="table table-bordered">
+        <table class="table table-striped">
           <thead>
             <th></th>
             <th>date</th>
@@ -150,12 +153,12 @@
             <td>{{med.reason}}</td>
             <td>{{med.note}}</td>
             <td>
-              <a class="btn btn-primary" href="/#/children/{{show.childId}}/meds/{{medId}}/edit">edit</a>
+              <a class="btn btn-primary chart-edit-btn" href="/#/children/{{show.childId}}/meds/{{medId}}/edit">edit</a>
             </td>
           </tr>
         </table>
         <div>
-          <a class="btn btn-primary" href="/#/children/{{show.childId}}/meds/new">add medicine</a>
+          <a class="btn btn-primary chart-submit-btn" href="/#/children/{{show.childId}}/meds/new">add medicine</a>
         </div>
       </span>
       </div>
@@ -169,7 +172,7 @@
         <button ng-hide="doctorInfo" class="chart-close-btn" ng-click="doctorInfo = !doctorInfo">&#10006;</button> 
         <img ng-show="doctorInfo" ng-src="https://thebloodsugarwhisperer.files.wordpress.com/2014/06/occupations_doctor.gif" style="height:200px;">
         <span ng-hide="doctorInfo">
-        <table class="table table-bordered">
+        <table class="table table-striped">
           <thead>
             <th></th>
             <th>name</th>
@@ -187,12 +190,12 @@
             <td>{{dr.phone}}</td>
             <td>{{dr.type}}</td>
             <td>
-              <a class="btn btn-primary" href="/#/children/{{show.childId}}/drs/{{drId}}/edit">edit</a>
+              <a class="btn btn-primary chart-edit-btn" href="/#/children/{{show.childId}}/drs/{{drId}}/edit">edit</a>
             </td>
           </tr>
         </table>
         <div>
-          <a class="btn btn-primary" href="/#/children/{{show.childId}}/drs/new">add doctor</a>
+          <a class="btn btn-primary chart-submit-btn" href="/#/children/{{show.childId}}/drs/new">add doctor</a>
         </div>
       </span>
       </div>
@@ -203,7 +206,7 @@
         <button ng-hide="vac" class="chart-close-btn" ng-click="vac = !vac">&#10006;</button> 
         <img ng-show="vac" ng-src="http://mayaclinic.in/patient-education/wp-content/uploads/2013/07/Vaccination-cartoon.jpg" style="height:200px;">
         <span ng-hide="vac">
-        <table class="table table-bordered">
+        <table class="table table-striped">
           <thead>
             <th></th>
             <th>vaccination</th>
@@ -219,12 +222,12 @@
             <td>{{vac.date | date:"MMM dd, yyyy"}}</td>
             <td>{{vac.reaction}}</td>
             <td>
-              <a class="btn btn-primary" href="/#/children/{{show.childId}}/vacs/{{vacId}}/edit">edit</a>
+              <a class="btn btn-primary chart-edit-btn" href="/#/children/{{show.childId}}/vacs/{{vacId}}/edit">edit</a>
             </td>
           </tr>
         </table>
         <div>
-          <a class="btn btn-primary" href="/#/children/{{show.childId}}/vacs/new">add vaccination</a>
+          <a class="btn btn-primary chart-submit-btn" href="/#/children/{{show.childId}}/vacs/new">add vaccination</a>
         </div>
       </span>
       </div>

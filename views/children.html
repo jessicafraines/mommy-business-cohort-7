@@ -1,23 +1,24 @@
-<div class="row" style="background-image: url(http://th01.deviantart.net/fs71/PRE/f/2010/193/c/d/Shoujo_style_Background_by_alliaxandromeda.png); background-size: cover; height: 100%; overflow:auto; background-attachment:scroll;">
+<div class="row children-page-background">
   <div class="col-xs-12">
     <h4 class="my-children">My Children</h4>
-  <div>
-    <div style="margin-top:40px; margin-left:40px; z-index:1; border-radius:10px;" type="button" class="btn btn-default child-btn" data-toggle="modal" data-target="#addChildModal"><span class="glyphicon glyphicon-plus glyph"></span></div>
+    <p class="instructions" ng-hide="child.children">Start by adding your child(ren) on this page. Once you add a child, you will be able to add details like growth records, milestones, doctor appointments, medicine history, doctor info and vaccination records.</p>
+    <div>
+      <div type="button" class="btn btn-default add-child-icon-btn" data-toggle="modal" data-target="#addChildModal"><span class="glyphicon glyphicon-plus glyph"></span></div>
   </div>
   <div class="child" ng-repeat="(childId, kid) in child.children">
-    <img ng-hide="kid.photo" src="/img/baby.jpg">
-    <img class="childrenImages" ng-show="kid.photo" src="data:image/png;base64,{{kid.photo}}">
+    <img class="children-images" ng-hide="kid.photo" src="/img/baby.jpg">
+    <img class="children-images" ng-show="kid.photo" src="data:image/png;base64,{{kid.photo}}">
     <h4 class="cap">{{kid.name}}</h4>
     <h4>{{kid.dob | date:"MM-dd-yyyy"}}</h4>
-    <h4><span ng-hide="kid.age.years < 1">{{kid.age.years}} year(s)old</span><span ng-hide="kid.age.years >= 1">{{kid.age.months}} month(s)old</span></h4>
-    <a class="btn btn-primary look-btn" href="/#/children/{{childId}}">edit</a>
+    <h4><span ng-hide="kid.age.years < 2">{{kid.age.years}} year(s) old</span><span ng-hide="kid.age.years >= 2">{{kid.age.months}} month(s) old</span></h4>
+    <a class="btn btn-primary look-btn" href="/#/children/{{childId}}">add details</a>
     <div>
       <div ng-click="child.deleteKid(childId)"><span style="padding-top:10px;" class="glyphicon glyphicon-trash"></span></div>
     </div>
   </div>
   <div class="child" ng-hide="child.children">
     <h4>example</h4>
-    <img src="/img/baby.jpg">
+    <img class="children-images" src="/img/baby.jpg">
     <h4>"Joe Smith"</h4>
     <h4>11/04/2014</h4>
   </div>
@@ -37,18 +38,18 @@
         <img class="login" src="../img/dj.jpg"/>
         <form name="addChildForm" ng-click="addChildForm.$valid && child.addChild()" novalidate>
           <div class="form-group" ng-class="{'has-error': !child.child.name}">
-            <label class="control-label add-child-color">name</label>
+            <label class="control-label">name</label>
             <input class="form-control" type="text" ng-model="child.newChild.name" required>
           </div>
           <div class="form-group" ng-class="{'has-error': !child.child.dob}">
-            <label class="control-label add-child-color">date of birth</label>
+            <label class="control-label">date of birth</label>
             <input class="form-control" type="date" ng-model="child.newChild.dob" required>
           </div>
           <div class="form-group" ng-class="{'has-error': !child.child.tob}">
-            <label class="control-label add-child-color">time of birth</label>
+            <label class="control-label">time of birth</label>
             <input class="form-control" type="time" ng-model="child.newChild.tob">
           </div>
-          <label class="control-label add-child-color">weight at birth</label>
+          <label>weight at birth</label>
           <div class="form-group" ng-class="{'has-error': !child.child.pab}">
             <label class="control-label" style="color:darkgrey;">lbs</label>
             <input class="form-control" type="number" ng-model="child.newChild.pab">
@@ -58,12 +59,11 @@
             <input class="form-control" type="number" ng-model="child.newChild.oab">
           </div>
           <div class="form-group" ng-class="{'has-error': !child.child.lab}">
-            <label class="control-label add-child-color">length at birth</label>
+            <label class="control-label">length at birth</label>
             <input class="form-control" type="number" ng-model="child.newChild.lab">
           </div>
-          <!--<input type="submit" value="add child" ng-disabled="addChildForm.$invalid">-->
         </form>
-        <button class="btn btn-primary" type="button" data-dismiss="modal" ng-click="child.addChild()">add child</button>
+        <button class="btn btn-primary add-child-btn" type="button" data-dismiss="modal" ng-click="child.addChild()">add child</button>
       </div>
     </div>
   </div>
