@@ -1,0 +1,87 @@
+@import url(http://fonts.googleapis.com/css?family=Give+You+Glory|Dancing+Script|Satisfy|Kranky|Mountains+of+Christmas|Miltonian+Tattoo);
+@import url(http://fonts.googleapis.com/css?family=Ribeye|Chela+One|Rozha+One|Antic+Didone|Purple+Purse|Gorditas|Miltonian);
+
+
+
+/* BUTTONS */
+.add-child-btn {
+  background-color: #4C3535 !important;
+  font-family: 'Antic Didone', serif;
+  color: white !important;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.look-btn {
+  background-color: #4C3535 !important;
+  font-family: 'Antic Didone', serif;
+  margin-top: 5px !important
+}
+
+.add-child-icon-btn {
+  margin-top:40px; 
+  margin-left:40px; 
+  border-radius:10px;
+  background-color: #4C3535;
+}
+
+.glyph {
+  color: white;
+}
+
+
+/* BACKGROUND */
+.children-page-background {
+  background-color: #FAFAFA;
+  background-size: cover; 
+  height: 100%; 
+  overflow: auto; 
+  background-attachment: scroll;
+}
+
+
+/* HEADER */
+.my-children {
+  color: #4C3535;
+  font-family: 'Purple Purse', cursive;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 40px;
+}
+
+.instructions {
+  text-align: center;
+  margin: 50px 300px 50px 300px;
+}
+
+
+/* CHILDREN INFO BOXES */
+div.child {
+  background-color: white;
+  font-family: 'Purple Purse', cursive;
+  font-size: 16px;
+  width: 210px;
+  height: 300px;
+  margin: 20px;
+  padding-top: 20px;
+  border-radius: 60px;
+  text-align: center;
+  display: inline-block;
+  color: #4C3535;
+  border: 3px solid #4C3535;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+          box-shadow: 0 10px 6px -6px #777;
+}
+
+.children-images {
+  border-radius: 50px;
+  height: 100px;
+  width: 100px;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+          box-shadow: 0 10px 6px -6px #777;
+}
+
+
+

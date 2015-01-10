@@ -1,0 +1,207 @@
+@import url(http://fonts.googleapis.com/css?family=Give+You+Glory|Dancing+Script|Satisfy|Kranky|Mountains+of+Christmas|Miltonian+Tattoo);
+@import url(http://fonts.googleapis.com/css?family=Ribeye|Chela+One|Rozha+One|Antic+Didone|Purple+Purse|Gorditas|Miltonian);
+
+
+
+/* BUTTONS */
+.edit-photo-btn {
+  margin: 20px;
+  margin-left: 150px;
+  margin-top: 10px !important;
+  background-color: #4C3535 !important;
+  margin-bottom: 50px;
+}
+
+
+/* BACKGROUND */
+.child-page-background {
+  background-color: #FAFAFA; 
+  background-size: cover;
+  height: 100%; 
+  overflow: auto;
+}
+
+
+/* MAIN IMAGE */
+.polaroid {
+  position: relative;
+  margin-left: 130px;
+  margin-top: 35px;
+  margin-bottom: 155px;
+  margin-right: 265px;
+  height: 190px;
+  width: 200px;
+  -webkit-transform: rotate(-6deg);
+    -moz-transform: rotate(-6deg);
+}
+ 
+.polaroid img {
+  height: 300px;
+  width: 280px !important;
+  border: 10px solid #fff;
+  border-bottom: 45px solid #fff;
+  -webkit-box-shadow: 3px 3px 3px #777;
+     -moz-box-shadow: 3px 3px 3px #777;
+          box-shadow: 3px 3px 3px #777;
+}
+
+.polaroid:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left:-2px;
+  top: 4px;
+  width: 75px;
+  height: 25px;
+  background-color: rgba(221,223,212,0.73);
+  -webkit-transform: rotate(-29deg);
+  -moz-transform: rotate(-29deg);
+  -o-transform: rotate(-29deg);
+  -ms-transform: rotate(-29deg);
+}
+ 
+.polaroid:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -2px;
+  top: 4px;
+  width: 75px;
+  height: 25px;
+  background-color: rgba(221,223,212,0.73);
+  -webkit-transform: rotate(29deg);
+  -moz-transform: rotate(29deg);
+  -o-transform: rotate(29deg);
+  -ms-transform: rotate(29deg);
+}
+
+.polaroid p {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: -105px;
+  font: 400 18px/1 'Kaushan Script', cursive;
+  color: #888;
+}
+
+#editPhoto {
+  border: 1px solid black;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 200px;
+}
+
+#editPhoto input[type='file'] {
+  margin: 0px auto;
+}
+
+#photo_file {
+  width: 250px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+
+/* CHILD INFO */
+#stretch { 
+  margin-top: 50px;
+  border: 15px solid transparent;
+  padding: 10px 20px;
+  -moz-border-image:url("https://s-media-cache-ak0.pinimg.com/236x/d4/fe/76/d4fe762237a64987a3bc6a719908abeb.jpg") 30 30 stretch; /* Old Firefox */
+  -webkit-border-image:url("https://s-media-cache-ak0.pinimg.com/236x/d4/fe/76/d4fe762237a64987a3bc6a719908abeb.jpg") 30 30 stretch; /* Safari */
+  -o-border-image:url("https://s-media-cache-ak0.pinimg.com/236x/d4/fe/76/d4fe762237a64987a3bc6a719908abeb.jpg") 30 30 stretch; /* Opera */
+  border-image:url("https://s-media-cache-ak0.pinimg.com/236x/d4/fe/76/d4fe762237a64987a3bc6a719908abeb.jpg") 30 30 stretch;
+}
+
+.childInfo {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  color: #4C3535;
+  text-align: center;
+}
+
+.inside-border {
+  border:6px solid #A8D8C0; 
+  border-radius: 9px;
+  background-color: white;
+}
+
+
+/* TABLES */
+.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #F0F2F8;
+}
+
+.table-striped > tbody > tr:nth-child(even) > td, .table-striped > tbody > tr:nth-child(even) > th {
+  background-color: #FCF7FA;
+}
+
+.charts {
+  border: 1px solid black;
+  margin: 10px;
+  background-color: white;
+}
+
+h4.chart-title {
+  text-align center; 
+  font-family: 'Purple Purse', cursive; font-size:10px;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.chart-btn {
+  background-color: #4C3535 !important;
+  border-radius: 10px;
+  font-family: 'Antic Didone', serif;
+  height: 40px;
+  color: white;
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+
+.chart-submit-btn {
+  background-color: #4C3535 !important;
+  border-radius: 10px;
+  font-family: 'Antic Didone', serif;
+  height: 40px;
+  color: white;
+  margin-bottom: 10px !important;
+}
+
+.chart-close-btn{
+  background-color: #4C3535 !important;
+  color: white;
+  font-family: 'Antic Didone', serif;
+  height: 40px;
+  width: 40px;
+  margin-bottom: 5px;
+}
+
+.chart-edit-btn {
+  background-color: #4C3535 !important;
+  color: white;
+  font-family: 'Antic Didone', serif;
+  height: 40px;
+  width: 60px;
+  margin-bottom: 5px;
+}
+
+table {
+  background-color: #f6f6f6;
+}
+
+tr {
+  height: 50px;
+}
+
+thead {
+  background-color: #4c3535;
+  color: white;
+  height: 20px;
+}
+
+.table-bordered {
+  margin: 0;
+}
+
+
