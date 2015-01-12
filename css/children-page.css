@@ -42,6 +42,12 @@
   overflow: auto; 
   background-attachment: scroll;
 }
+#grad {
+  background: -webkit-linear-gradient(left,rgba(248,179,182,.5),rgba(139,192,206,.5),rgba(168,216,192,.5),rgba(251,252,208,.5),rgba(168,216,192,.5),rgba(139,192,206,.5),rgba(248,179,182,.5)); /*Safari 5.1-6*/
+  background: -o-linear-gradient(right,rgba(248,179,182,.5),rgba(139,192,206,.5),rgba(168,216,192,.5),rgba(251,252,208,.5),rgba(168,216,192,.5),rgba(139,192,206,.5),rgba(248,179,182,.5)); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(right,rgba(248,179,182,.5),rgba(139,192,206,.5),rgba(168,216,192,.5),rgba(251,252,208,.5),rgba(168,216,192,.5),rgba(139,192,206,.5),rgba(248,179,182,.5)); /*Fx 3.6-15*/
+  background: linear-gradient(to right,rgba(248,179,182,.5),rgba(139,192,206,.5),rgba(168,216,192,.5),rgba(251,252,208,.5),rgba(168,216,192,.5),rgba(139,192,206,.5),rgba(248,179,182,.5)); /*Standard*/
+        }
 
 
 /* HEADER */
@@ -54,37 +60,45 @@
 }
 
 .instructions {
-  text-align: center;
-  margin: 50px 300px 50px 300px;
-}
-
-
-/* CHILDREN INFO BOXES */
-div.child {
   font-family: 'Purple Purse', cursive;
-  font-size: 16px;
-  width: 210px;
-  height: 300px;
-  margin: 20px;
-  padding-top: 20px;
-  border-radius: 60px;
   text-align: center;
-  display: inline-block;
-  color: #4C3535;
-  border: 3px solid #4C3535;
-  -webkit-box-shadow: 0 10px 6px -6px #777;
-    -moz-box-shadow: 0 10px 6px -6px #777;
-          box-shadow: 0 10px 6px -6px #777;
+  margin: 20px 300px 50px 300px;
 }
 
-.children-images {
-  border-radius: 10px;
-  height: 100px;
-  width: 100px;
-  -webkit-box-shadow: 0 10px 6px -6px #777;
-    -moz-box-shadow: 0 10px 6px -6px #777;
-          box-shadow: 0 10px 6px -6px #777;
-} 
+.getting-started {
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Purple Purse', cursive;
+}
 
+/* CHILDREN INFO PHOTOS */
+.polaroid {
+  display: inline-block;
+  position: relative;
+  margin-left: 130px;
+  margin-top: 35px;
+  margin-bottom: 155px;
+  margin-right: 25px;
+  height: 190px;
+  width: 200px;
+}
 
+.polaroid .pol {
+  height: 300px;
+  width: 280px !important;
+  border: 10px solid #fff;
+  border-bottom: 45px solid #fff;
+  -webkit-box-shadow: 3px 3px 3px #777;
+     -moz-box-shadow: 3px 3px 3px #777;
+          box-shadow: 3px 3px 3px #777;
+}
 
+.polaroid h4 {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: -105px;
+  font: 400 18px/1 'Kaushan Script', cursive;
+  color: #888;
+  margin-left: 30px;
+}

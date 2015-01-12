@@ -17,10 +17,7 @@
   width: 50px;
   height: 50px;
   border-radius: 100px;
-  margin: 0px;
-  -webkit-box-shadow: 0 10px 6px -6px #FCF9F9;
-    -moz-box-shadow: 0 10px 6px -6px #FCF9F9;
-          box-shadow: 0 10px 6px -6px #FCF9F9;
+  margin: 0px 10px 0px 10px;
 }
 
 .navbar > .container .navbar-brand {
@@ -44,7 +41,7 @@
 }
 
 .navbar-default .navbar-nav .logout {
-  color: #F8B3B6 !important;
+  color: #F2BDD6 !important;
 }
 #green {
     border: 5px solid #A8D8C0;
@@ -128,24 +125,24 @@ div[ng-view] {
 
 /* HOME PAGE */
 .glow {
-   -webkit-stroke-width: 5.3px;
+   /*-webkit-stroke-width: 5.3px;
    -webkit-stroke-color: #FFFFFF;
    -webkit-fill-color: #FFFFFF;
    text-shadow: 1px 0px 20px white;
    -webkit-transition: width 0.3s; /*Safari & Chrome*/
-   transition: width 0.3s;
+   /*transition: width 0.3s;
    -moz-transition: width 0.3s; /* Firefox 4 */
-   -o-transition: width 0.3s; /* Opera */
+  /* -o-transition: width 0.3s; /* Opera */
    text-align: center;
-   font-family: 'Purple Purse', cursive;
    color: #f8f8f8;
+   font-family: 'Antic Didone, serif';
 }
 
 .shroud {
   height: 40%;
   width: 100%;
   padding-top: 60px;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(76, 53, 53, 0.65);
   position: absolute;
   top: 280px;
   bottom: 0;
