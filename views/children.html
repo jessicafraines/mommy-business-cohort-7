@@ -5,22 +5,18 @@
     <div>
       <div type="button" class="btn btn-default add-child-icon-btn" data-toggle="modal" data-target="#addChildModal"><span class="glyphicon glyphicon-plus glyph"></span></div>
   </div>
-  <div class="child" ng-repeat="(childId, kid) in child.children">
-    <img class="children-images" ng-hide="kid.photo" src="/img/baby.jpg">
-    <img class="children-images" ng-show="kid.photo" src="data:image/png;base64,{{kid.photo}}">
+  <div class="polaroid" ng-repeat="(childId, kid) in child.children">
+    <img class="pol" ng-hide="kid.photo" src="/img/baby.jpg">
+    <img class="pol" ng-show="kid.photo" src="data:image/png;base64,{{kid.photo}}">
     <h4 class="cap">{{kid.name}}</h4>
-    <h4>{{kid.dob | date:"MM-dd-yyyy"}}</h4>
-    <h4><span ng-hide="kid.age.years < 2">{{kid.age.years}} year(s) old</span><span ng-hide="kid.age.years >= 2">{{kid.age.months}} month(s) old</span></h4>
-    <a class="btn btn-primary look-btn" href="/#/children/{{childId}}">add details</a>
+    <a class="btn btn-primary look-btn center-block" href="/#/children/{{childId}}">add details</a>
     <div>
-      <div ng-click="child.deleteKid(childId)"><span style="padding-top:10px;" class="glyphicon glyphicon-trash"></span></div>
+      <div ng-click="child.deleteKid(childId)"><span style="padding-top:10px;" class="glyphicon glyphicon-trash trash"></span></div>
     </div>
   </div>
-  <div class="child" ng-hide="child.children">
-    <h4>example</h4>
-    <img class="children-images" src="/img/baby.jpg">
-    <h4>"Joe Smith"</h4>
-    <h4>11/04/2014</h4>
+  <div class="polaroid" ng-hide="child.children">
+    <img class="pol" src="/img/baby.jpg">
+    <h4>"Example"</h4>
   </div>
   </div>
 </div>

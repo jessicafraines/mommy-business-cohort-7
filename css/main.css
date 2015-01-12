@@ -87,13 +87,10 @@
 
 
 /* CAPITALIZATION */
-h4.cap {
+.cap {
   text-transform: capitalize;
 }
 
-td.cap {
-  text-transform: capitalize;
-}
 
 /* MISC */
 h4 {
@@ -157,7 +154,7 @@ div[ng-view] {
 }
 
 .welcome {
-  font-size: 30px;
+  font-size: 25px;
 }
 
 

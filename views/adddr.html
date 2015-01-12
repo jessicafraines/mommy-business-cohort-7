@@ -1,6 +1,5 @@
-<div class="row" style="background-image:url(https://thebloodsugarwhisperer.files.wordpress.com/2014/06/occupations_doctor.gif); background-color: rgba(0, 0, 0, 0.4); background-size:cover; height:100%; overflow:auto;">
-  <div class="col-xs-12" style="background-color:rgba(0, 0, 0, 0.4); height:100%;">
-<div class="row">
+<div class="row full-height" style="background-image:url(https://thebloodsugarwhisperer.files.wordpress.com/2014/06/occupations_doctor.gif); background-color: rgba(0, 0, 0, 0.4);">
+  <div class="col-xs-12" style="background-color:rgba(0, 0, 0, 0.4); overflow:auto; height:100%;">
   <div class="col-xs-5"></div>
   <div class="col-xs-2">
     <div class="modal-fade" aria-hidden="true" id="dr" tabindex="-1" role="dialog" aria-labelledby="drLabel">
@@ -19,17 +18,17 @@
                 </div>
                 <div class="form-group" ng-class="{'has-error': !show.dr.address}">
                   <label class="control-label">address</label>
-                  <input class="form-control" type="text" ng-model="show.newDr.address">
+                  <input class="form-control" type="text" ng-model="show.newDr.address" placeholder="1234 Main Street">
                 </div>
                 <div class="form-group" ng-class="{'has-error': !show.dr.phone}">
                   <label class="control-label">phone number</label>
-                  <input class="form-control" type="text" ng-model="show.newDr.phone">
+                  <input class="form-control" type="tel" ng-model="show.newDr.phone" placeholder="555-1212"> 
                 </div>
                 <div class="form-group" ng-class="{'has-error': !show.dr.type}">
                   <label class="control-label">type of doctor</label>
                   <input class="form-control" type="text" ng-model="show.newDr.type">
                 </div>
-                  <input type="submit" value="submit" ng-disabled="addDrForm.$invalid" data-dismiss="modal">
+                  <input class="chart-submit-btn" type="submit" value="submit" ng-disabled="addDrForm.$invalid" data-dismiss="modal">
                 </div>
               </form>
             </div>
