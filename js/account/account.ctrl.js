@@ -2,10 +2,11 @@
   'use strict';
   angular.module('mommyApp')
 
-  .controller('LoginController', function($scope, $location, accountFactory) {
+  .controller('LoginController', function($scope, $location, $route, accountFactory) {
     var vm = this;
 
-    vm.login = function() { 
+    vm.login = function() {
+      $route.reload();
       accountFactory.login(vm.email, vm.password, function() {
         $location.path('/children');
         $scope.$apply();
@@ -37,9 +38,8 @@
 
     vm.changePassword = function() {
       accountFactory.changePassword(vm.oldPassword, vm.newPassword, function() {
-        alert('You will need to log back in');
-        $location.path('/logout');
-        $route.reload();
+        $location.path('/children');
+        $scope.$apply();
       })
     };
   }) //close change pass cntrl

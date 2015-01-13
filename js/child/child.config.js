@@ -4,6 +4,17 @@
   .config(function($routeProvider){
     $routeProvider
 
+    .when('/changePassword', {
+      templateUrl: 'views/changepassword.html',
+      controller: 'ChangePasswordController',
+      controllerAs: 'changepw'
+    })
+    
+    .when('/logout', {
+      template: '',
+      controller: 'LogoutController'
+    })
+
     .when('/children', {
       templateUrl: 'views/children.html',
       controller: 'ChildController',
