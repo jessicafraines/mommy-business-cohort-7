@@ -6,7 +6,6 @@
     var vm = this;
 
     vm.login = function() {
-      $route.reload();
       accountFactory.login(vm.email, vm.password, function() {
         $location.path('/children');
         $scope.$apply();
@@ -25,7 +24,7 @@
 
   }) //close login cntrl   
   
-  .controller('LogoutController', function($scope, $location, accountFactory) {
+  .controller('LogoutController', function($scope, $location, $route, accountFactory) {
     accountFactory.logout(function() {
       $location.path('/');
       $scope.$apply();

@@ -24,7 +24,12 @@
   font-size: 55px;
   font-family: 'Purple Purse', cursive;
   color: #F7F7F7;
+}
 
+@media(max-width:767px){
+  .navbar > .container .navbar-brand {
+    font-size: 25px;
+  }
 }
 
 .navbar-default .navbar-nav > li > a {
